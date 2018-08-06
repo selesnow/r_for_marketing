@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Язык R в интернет маркетинге</title>
+  <meta name="description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Язык R в интернет маркетинге" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Язык R в интернет маркетинге" />
+  
+  <meta name="twitter:description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”" />
+  
+
+<meta name="author" content="Алексей Селезнёв">
+
+
+<meta name="date" content="2018-08-03">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="applications.html">
+<link rel="next" href="references.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Методичка к курсу Язык R в маркетинге</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Описание</a></li>
+<li class="chapter" data-level="2" data-path="-1-r-.html"><a href="-1-r-.html"><i class="fa fa-check"></i><b>2</b> Модуль 1: Введение в R.</a><ul>
+<li class="chapter" data-level="2.1" data-path="-1-r-.html"><a href="-1-r-.html#---r"><i class="fa fa-check"></i><b>2.1</b> История создания языка R</a></li>
+<li class="chapter" data-level="2.2" data-path="-1-r-.html"><a href="-1-r-.html#--r."><i class="fa fa-check"></i><b>2.2</b> Преимущества языка R.</a></li>
+<li class="chapter" data-level="2.3" data-path="-1-r-.html"><a href="-1-r-.html#--r----rstudio"><i class="fa fa-check"></i><b>2.3</b> Установка языка R и среды разработки RStudio</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="-1-r-.html"><a href="-1-r-.html#---r--rstudio"><i class="fa fa-check"></i><b>2.3.1</b> Ссылки для загрузки R и RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="-1-r-.html"><a href="-1-r-.html#------power-bi---r-."><i class="fa fa-check"></i><b>2.4</b> Загрузка, преобразование и визуализация данных в Power BI с помощью R скриптов.</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="-1-r-.html"><a href="-1-r-.html#---power-bi."><i class="fa fa-check"></i><b>2.4.1</b> Загрузка данных в Power BI.</a></li>
+<li class="chapter" data-level="2.4.2" data-path="-1-r-.html"><a href="-1-r-.html#---power-bi-power-query."><i class="fa fa-check"></i><b>2.4.2</b> Преобразование данных в Power BI (power query).</a></li>
+<li class="chapter" data-level="2.4.3" data-path="-1-r-.html"><a href="-1-r-.html#---power-bi------r."><i class="fa fa-check"></i><b>2.4.3</b> Визуализация данных в Power BI с помощью визуального элемента скрипта R.</a></li>
+<li class="chapter" data-level="2.4.4" data-path="-1-r-.html"><a href="-1-r-.html#---power-bi--r-."><i class="fa fa-check"></i><b>2.4.4</b> Использование пользовательских параметров Power BI в R скриптах.</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="-1-r-.html"><a href="-1-r-.html#--rstudio"><i class="fa fa-check"></i><b>2.5</b> Среда разработки RStudio</a></li>
+<li class="chapter" data-level="2.6" data-path="-1-r-.html"><a href="-1-r-.html#----r"><i class="fa fa-check"></i><b>2.6</b> Классы объектов в языке R</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="-1-r-.html"><a href="-1-r-.html#section-2.6.1"><i class="fa fa-check"></i><b>2.6.1</b> Векторы</a></li>
+<li class="chapter" data-level="2.6.2" data-path="-1-r-.html"><a href="-1-r-.html#-data.frame"><i class="fa fa-check"></i><b>2.6.2</b> Таблицы (data.frame)</a></li>
+<li class="chapter" data-level="2.6.3" data-path="-1-r-.html"><a href="-1-r-.html#-list"><i class="fa fa-check"></i><b>2.6.3</b> Списки (list)</a></li>
+<li class="chapter" data-level="2.6.4" data-path="-1-r-.html"><a href="-1-r-.html#--"><i class="fa fa-check"></i><b>2.6.4</b> Проверить класс объекта</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="-1-r-.html"><a href="-1-r-.html#-----r"><i class="fa fa-check"></i><b>2.7</b> Работа со строками на языке R</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="-1-r-.html"><a href="-1-r-.html#-------r"><i class="fa fa-check"></i><b>2.7.1</b> Базовые возможности для работы со строками в R</a></li>
+<li class="chapter" data-level="2.7.2" data-path="-1-r-.html"><a href="-1-r-.html#------stringr"><i class="fa fa-check"></i><b>2.7.2</b> Работа со строками с помощью пакета stringr</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="-1-r-.html"><a href="-1-r-.html#---csv-excel--json---r"><i class="fa fa-check"></i><b>2.8</b> Загрузка данных из csv, excel и json файлов в R</a><ul>
+<li class="chapter" data-level="2.8.1" data-path="-1-r-.html"><a href="-1-r-.html#---csv-"><i class="fa fa-check"></i><b>2.8.1</b> Загрузка данных из csv файлов</a></li>
+<li class="chapter" data-level="2.8.2" data-path="-1-r-.html"><a href="-1-r-.html#---excel-"><i class="fa fa-check"></i><b>2.8.2</b> Загрузка данных из Excel файлов</a></li>
+<li class="chapter" data-level="2.8.3" data-path="-1-r-.html"><a href="-1-r-.html#---json-"><i class="fa fa-check"></i><b>2.8.3</b> Загрузка данных из JSON файлов</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="-1-r-.html"><a href="-1-r-.html#------r"><i class="fa fa-check"></i><b>2.9</b> Агрегирующие функции и арифметические операции в R</a></li>
+<li class="chapter" data-level="2.10" data-path="-1-r-.html"><a href="-1-r-.html#-----."><i class="fa fa-check"></i><b>2.10</b> Манипуляция с данными, (группировка и агреция).</a><ul>
+<li class="chapter" data-level="2.10.1" data-path="-1-r-.html"><a href="-1-r-.html#-dplyr"><i class="fa fa-check"></i><b>2.10.1</b> Пакет dplyr</a></li>
+<li class="chapter" data-level="2.10.2" data-path="-1-r-.html"><a href="-1-r-.html#-data.table"><i class="fa fa-check"></i><b>2.10.2</b> Пакет data.table</a></li>
+<li class="chapter" data-level="2.10.3" data-path="-1-r-.html"><a href="-1-r-.html#-sqldf"><i class="fa fa-check"></i><b>2.10.3</b> Пакет sqldf</a></li>
+<li class="chapter" data-level="2.10.4" data-path="-1-r-.html"><a href="-1-r-.html#-tidyr"><i class="fa fa-check"></i><b>2.10.4</b> Пакет tidyr</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="-1-r-.html"><a href="-1-r-.html#------r--lubridate."><i class="fa fa-check"></i><b>2.11</b> Работа с датами и временем в R, пакет lubridate.</a><ul>
+<li class="chapter" data-level="2.11.1" data-path="-1-r-.html"><a href="-1-r-.html#---------r"><i class="fa fa-check"></i><b>2.11.1</b> Базовые возможности по работе с датой и временем в R</a></li>
+<li class="chapter" data-level="2.11.2" data-path="-1-r-.html"><a href="-1-r-.html#-lubridate"><i class="fa fa-check"></i><b>2.11.2</b> Пакет lubridate</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="-1-r-.html"><a href="-1-r-.html#--if-ifelse-switch--r"><i class="fa fa-check"></i><b>2.12</b> Условные конструкции if, ifelse, switch в R</a></li>
+<li class="chapter" data-level="2.13" data-path="-1-r-.html"><a href="-1-r-.html#-for--while"><i class="fa fa-check"></i><b>2.13</b> Циклы for и while</a><ul>
+<li class="chapter" data-level="2.13.1" data-path="-1-r-.html"><a href="-1-r-.html#-for"><i class="fa fa-check"></i><b>2.13.1</b> Цикл for</a></li>
+<li class="chapter" data-level="2.13.2" data-path="-1-r-.html"><a href="-1-r-.html#-while"><i class="fa fa-check"></i><b>2.13.2</b> Цикл while</a></li>
+</ul></li>
+<li class="chapter" data-level="2.14" data-path="-1-r-.html"><a href="-1-r-.html#-----r"><i class="fa fa-check"></i><b>2.14</b> Разработка собственных функций в языке R</a></li>
+<li class="chapter" data-level="2.15" data-path="-1-r-.html"><a href="-1-r-.html#---r--try"><i class="fa fa-check"></i><b>2.15</b> Обработка ошибок в R, функция try</a></li>
+<li class="chapter" data-level="2.16" data-path="-1-r-.html"><a href="-1-r-.html#---"><i class="fa fa-check"></i><b>2.16</b> Рекомендации по оформлению кода</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>3</b> Introduction</a></li>
+<li class="chapter" data-level="4" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>4</b> Literature</a></li>
+<li class="chapter" data-level="5" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>5</b> Methods</a></li>
+<li class="chapter" data-level="6" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>6</b> Applications</a><ul>
+<li class="chapter" data-level="6.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>6.1</b> Example one</a></li>
+<li class="chapter" data-level="6.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>6.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>7</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Язык R в интернет маркетинге</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="final-words" class="section level1">
+<h1><span class="header-section-number">7</span> Final Words</h1>
+<p>We have finished a nice book.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="applications.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-summary.Rmd",
+"text": "Edit"
+},
+"download": ["r_for_marketing_2018.pdf", "r_for_marketing_2018.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
