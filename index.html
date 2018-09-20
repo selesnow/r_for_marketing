@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Язык R в интернет маркетинге</title>
+  <meta name="description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Язык R в интернет маркетинге" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Язык R в интернет маркетинге" />
+  
+  <meta name="twitter:description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”" />
+  
+
+<meta name="author" content="Алексей Селезнёв">
+
+
+<meta name="date" content="2018-09-20">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="a-.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114798296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114798296-1');
+</script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Язык R в Интернет Маркетинге</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Описание</a></li>
+<li class="chapter" data-level="2" data-path="a-.html"><a href="a-.html"><i class="fa fa-check"></i><b>2</b> a - О курсе</a><ul>
+<li class="chapter" data-level="2.1" data-path="a-.html"><a href="a-.html#---"><i class="fa fa-check"></i><b>2.1</b> Для кого этот курс</a></li>
+<li class="chapter" data-level="2.2" data-path="a-.html"><a href="a-.html#-----"><i class="fa fa-check"></i><b>2.2</b> Какие знания требуются для прохождения курса</a></li>
+<li class="chapter" data-level="2.3" data-path="a-.html"><a href="a-.html#-------"><i class="fa fa-check"></i><b>2.3</b> Какие темы не будут затронуты в ходе курса</a></li>
+<li class="chapter" data-level="2.4" data-path="a-.html"><a href="a-.html#------"><i class="fa fa-check"></i><b>2.4</b> Что вы будете уметь поосле проождения курса</a></li>
+<li class="chapter" data-level="2.5" data-path="a-.html"><a href="a-.html#-"><i class="fa fa-check"></i><b>2.5</b> Поддержка студентов</a></li>
+<li class="chapter" data-level="2.6" data-path="a-.html"><a href="a-.html#-"><i class="fa fa-check"></i><b>2.6</b> Конспект курса</a></li>
+<li class="chapter" data-level="2.7" data-path="a-.html"><a href="a-.html#-"><i class="fa fa-check"></i><b>2.7</b> Программа курса</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="b-.html"><a href="b-.html"><i class="fa fa-check"></i><b>3</b> b - Об авторе</a></li>
+<li class="chapter" data-level="4" data-path="c-.html"><a href="c-.html"><i class="fa fa-check"></i><b>4</b> c - Благодарности</a></li>
+<li class="chapter" data-level="5" data-path="-1-r-.html"><a href="-1-r-.html"><i class="fa fa-check"></i><b>5</b> Модуль 1: Введение в R.</a><ul>
+<li class="chapter" data-level="5.1" data-path="-1-r-.html"><a href="-1-r-.html#---r"><i class="fa fa-check"></i><b>5.1</b> История создания языка R</a></li>
+<li class="chapter" data-level="5.2" data-path="-1-r-.html"><a href="-1-r-.html#--r."><i class="fa fa-check"></i><b>5.2</b> Преимущества языка R.</a></li>
+<li class="chapter" data-level="5.3" data-path="-1-r-.html"><a href="-1-r-.html#--r----rstudio"><i class="fa fa-check"></i><b>5.3</b> Установка языка R и среды разработки RStudio</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="-1-r-.html"><a href="-1-r-.html#---r--rstudio"><i class="fa fa-check"></i><b>5.3.1</b> Ссылки для загрузки R и RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="-1-r-.html"><a href="-1-r-.html#------power-bi---r-."><i class="fa fa-check"></i><b>5.4</b> Загрузка, преобразование и визуализация данных в Power BI с помощью R скриптов.</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="-1-r-.html"><a href="-1-r-.html#---power-bi."><i class="fa fa-check"></i><b>5.4.1</b> Загрузка данных в Power BI.</a></li>
+<li class="chapter" data-level="5.4.2" data-path="-1-r-.html"><a href="-1-r-.html#---power-bi-power-query."><i class="fa fa-check"></i><b>5.4.2</b> Преобразование данных в Power BI (power query).</a></li>
+<li class="chapter" data-level="5.4.3" data-path="-1-r-.html"><a href="-1-r-.html#---power-bi------r."><i class="fa fa-check"></i><b>5.4.3</b> Визуализация данных в Power BI с помощью визуального элемента скрипта R.</a></li>
+<li class="chapter" data-level="5.4.4" data-path="-1-r-.html"><a href="-1-r-.html#---power-bi--r-."><i class="fa fa-check"></i><b>5.4.4</b> Использование пользовательских параметров Power BI в R скриптах.</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="-1-r-.html"><a href="-1-r-.html#--rstudio"><i class="fa fa-check"></i><b>5.5</b> Среда разработки RStudio</a></li>
+<li class="chapter" data-level="5.6" data-path="-1-r-.html"><a href="-1-r-.html#----r"><i class="fa fa-check"></i><b>5.6</b> Классы объектов в языке R</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="-1-r-.html"><a href="-1-r-.html#section-5.6.1"><i class="fa fa-check"></i><b>5.6.1</b> Векторы</a></li>
+<li class="chapter" data-level="5.6.2" data-path="-1-r-.html"><a href="-1-r-.html#-data.frame"><i class="fa fa-check"></i><b>5.6.2</b> Таблицы (data.frame)</a></li>
+<li class="chapter" data-level="5.6.3" data-path="-1-r-.html"><a href="-1-r-.html#-list"><i class="fa fa-check"></i><b>5.6.3</b> Списки (list)</a></li>
+<li class="chapter" data-level="5.6.4" data-path="-1-r-.html"><a href="-1-r-.html#--"><i class="fa fa-check"></i><b>5.6.4</b> Проверить класс объекта</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="-1-r-.html"><a href="-1-r-.html#-----r"><i class="fa fa-check"></i><b>5.7</b> Работа со строками на языке R</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="-1-r-.html"><a href="-1-r-.html#-------r"><i class="fa fa-check"></i><b>5.7.1</b> Базовые возможности для работы со строками в R</a></li>
+<li class="chapter" data-level="5.7.2" data-path="-1-r-.html"><a href="-1-r-.html#------stringr"><i class="fa fa-check"></i><b>5.7.2</b> Работа со строками с помощью пакета stringr</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="-1-r-.html"><a href="-1-r-.html#---csv-excel--json---r"><i class="fa fa-check"></i><b>5.8</b> Загрузка данных из csv, excel и json файлов в R</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="-1-r-.html"><a href="-1-r-.html#---csv-"><i class="fa fa-check"></i><b>5.8.1</b> Загрузка данных из csv файлов</a></li>
+<li class="chapter" data-level="5.8.2" data-path="-1-r-.html"><a href="-1-r-.html#---excel-"><i class="fa fa-check"></i><b>5.8.2</b> Загрузка данных из Excel файлов</a></li>
+<li class="chapter" data-level="5.8.3" data-path="-1-r-.html"><a href="-1-r-.html#---json-"><i class="fa fa-check"></i><b>5.8.3</b> Загрузка данных из JSON файлов</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="-1-r-.html"><a href="-1-r-.html#------r"><i class="fa fa-check"></i><b>5.9</b> Агрегирующие функции и арифметические операции в R</a></li>
+<li class="chapter" data-level="5.10" data-path="-1-r-.html"><a href="-1-r-.html#-----."><i class="fa fa-check"></i><b>5.10</b> Манипуляция с данными, (группировка и агреция).</a><ul>
+<li class="chapter" data-level="5.10.1" data-path="-1-r-.html"><a href="-1-r-.html#-dplyr"><i class="fa fa-check"></i><b>5.10.1</b> Пакет dplyr</a></li>
+<li class="chapter" data-level="5.10.2" data-path="-1-r-.html"><a href="-1-r-.html#-data.table"><i class="fa fa-check"></i><b>5.10.2</b> Пакет data.table</a></li>
+<li class="chapter" data-level="5.10.3" data-path="-1-r-.html"><a href="-1-r-.html#-sqldf"><i class="fa fa-check"></i><b>5.10.3</b> Пакет sqldf</a></li>
+<li class="chapter" data-level="5.10.4" data-path="-1-r-.html"><a href="-1-r-.html#-tidyr"><i class="fa fa-check"></i><b>5.10.4</b> Пакет tidyr</a></li>
+</ul></li>
+<li class="chapter" data-level="5.11" data-path="-1-r-.html"><a href="-1-r-.html#------r--lubridate."><i class="fa fa-check"></i><b>5.11</b> Работа с датами и временем в R, пакет lubridate.</a><ul>
+<li class="chapter" data-level="5.11.1" data-path="-1-r-.html"><a href="-1-r-.html#---------r"><i class="fa fa-check"></i><b>5.11.1</b> Базовые возможности по работе с датой и временем в R</a></li>
+<li class="chapter" data-level="5.11.2" data-path="-1-r-.html"><a href="-1-r-.html#-lubridate"><i class="fa fa-check"></i><b>5.11.2</b> Пакет lubridate</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="-1-r-.html"><a href="-1-r-.html#--if-ifelse-switch--r"><i class="fa fa-check"></i><b>5.12</b> Условные конструкции if, ifelse, switch в R</a></li>
+<li class="chapter" data-level="5.13" data-path="-1-r-.html"><a href="-1-r-.html#-for--while"><i class="fa fa-check"></i><b>5.13</b> Циклы for и while</a><ul>
+<li class="chapter" data-level="5.13.1" data-path="-1-r-.html"><a href="-1-r-.html#-for"><i class="fa fa-check"></i><b>5.13.1</b> Цикл for</a></li>
+<li class="chapter" data-level="5.13.2" data-path="-1-r-.html"><a href="-1-r-.html#-while"><i class="fa fa-check"></i><b>5.13.2</b> Цикл while</a></li>
+</ul></li>
+<li class="chapter" data-level="5.14" data-path="-1-r-.html"><a href="-1-r-.html#-----r"><i class="fa fa-check"></i><b>5.14</b> Разработка собственных функций в языке R</a></li>
+<li class="chapter" data-level="5.15" data-path="-1-r-.html"><a href="-1-r-.html#---r--try"><i class="fa fa-check"></i><b>5.15</b> Обработка ошибок в R, функция try</a></li>
+<li class="chapter" data-level="5.16" data-path="a-.html"><a href="a-.html#---"><i class="fa fa-check"></i><b>5.16</b> Рекомендации по оформлению кода</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="-2-api-.html"><a href="-2-api-.html"><i class="fa fa-check"></i><b>6</b> Модуль 2: Работа с API рекламных площадок.</a><ul>
+<li class="chapter" data-level="6.1" data-path="-2-api-.html"><a href="-2-api-.html#--api"><i class="fa fa-check"></i><b>6.1</b> Что такое API</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="-2-api-.html"><a href="-2-api-.html#-http-"><i class="fa fa-check"></i><b>6.1.1</b> Типы HTTP запросов</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="-2-api-.html"><a href="-2-api-.html#--api-google-ads"><i class="fa fa-check"></i><b>6.2</b> Работа с API Google Ads</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="-2-api-.html"><a href="-2-api-.html#----api-google-ads"><i class="fa fa-check"></i><b>6.2.1</b> Как получить доступ к API Google Ads</a></li>
+<li class="chapter" data-level="6.2.2" data-path="-2-api-.html"><a href="-2-api-.html#--api-google-ads"><i class="fa fa-check"></i><b>6.2.2</b> Как устроен API Google Ads</a></li>
+<li class="chapter" data-level="6.2.3" data-path="-2-api-.html"><a href="-2-api-.html#-radwords"><i class="fa fa-check"></i><b>6.2.3</b> Пакет RAdwords</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="-2-api-.html"><a href="-2-api-.html#--api--"><i class="fa fa-check"></i><b>6.3</b> Работа с API Яндекс Директ</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="-2-api-.html"><a href="-2-api-.html#-ryandexdirect"><i class="fa fa-check"></i><b>6.3.1</b> Пакет ryandexdirect</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="-2-api-.html"><a href="-2-api-.html#--api-facebook"><i class="fa fa-check"></i><b>6.4</b> Работа с API Facebook</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="-2-api-.html"><a href="-2-api-.html#---facebook"><i class="fa fa-check"></i><b>6.4.1</b> Создание приложения в Facebook</a></li>
+<li class="chapter" data-level="6.4.2" data-path="-2-api-.html"><a href="-2-api-.html#--api-facebook"><i class="fa fa-check"></i><b>6.4.2</b> Авторизация в API Facebook</a></li>
+<li class="chapter" data-level="6.4.3" data-path="-2-api-.html"><a href="-2-api-.html#-----facebook"><i class="fa fa-check"></i><b>6.4.3</b> Загрузка объектов из рекламного кабинета Facebook</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="-2-api-.html"><a href="-2-api-.html#--api--vk.com"><i class="fa fa-check"></i><b>6.5</b> Работа с API Вконтакте (vk.com)</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="-2-api-.html"><a href="-2-api-.html#-----api-"><i class="fa fa-check"></i><b>6.5.1</b> Создание приложения для работы с API Вконтакте</a></li>
+<li class="chapter" data-level="6.5.2" data-path="-2-api-.html"><a href="-2-api-.html#--api-"><i class="fa fa-check"></i><b>6.5.2</b> Авторизация в API Вконтакте</a></li>
+<li class="chapter" data-level="6.5.3" data-path="-2-api-.html"><a href="-2-api-.html#--rvkstat"><i class="fa fa-check"></i><b>6.5.3</b> Функции пакета rvkstat</a></li>
+<li class="chapter" data-level="6.5.4" data-path="a-.html"><a href="a-.html#-----"><i class="fa fa-check"></i><b>6.5.4</b> Загрузка объектов из рекламного кабинета Вконтакте</a></li>
+<li class="chapter" data-level="6.5.5" data-path="a-.html"><a href="a-.html#-----"><i class="fa fa-check"></i><b>6.5.5</b> Загрузка статистики из рекламного кабинета Вконтакте</a></li>
+<li class="chapter" data-level="6.5.6" data-path="a-.html"><a href="a-.html#------"><i class="fa fa-check"></i><b>6.5.6</b> Загрузка статистики по сообществам и группам Вконтакте</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="-2-api-.html"><a href="-2-api-.html#--api-mytarget"><i class="fa fa-check"></i><b>6.6</b> Работа с API MyTarget</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="-2-api-.html"><a href="-2-api-.html#--api-mytarget"><i class="fa fa-check"></i><b>6.6.1</b> Авторизация в API MyTarget</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="-2-api-.html"><a href="-2-api-.html#---google-analytics"><i class="fa fa-check"></i><b>6.7</b> Загрузка данных из Google Analytics</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="-2-api-.html"><a href="-2-api-.html#-api----google-analytics"><i class="fa fa-check"></i><b>6.7.1</b> Какие API интерфейсы доступны в Google Analytics</a></li>
+<li class="chapter" data-level="6.7.2" data-path="-2-api-.html"><a href="-2-api-.html#--api-google-analytics"><i class="fa fa-check"></i><b>6.7.2</b> Авторизация в API Google Analytics</a></li>
+<li class="chapter" data-level="6.7.3" data-path="-2-api-.html"><a href="-2-api-.html#--management-api"><i class="fa fa-check"></i><b>6.7.3</b> Работа с Management API</a></li>
+<li class="chapter" data-level="6.7.4" data-path="-2-api-.html"><a href="-2-api-.html#--core-reporting-api"><i class="fa fa-check"></i><b>6.7.4</b> Работа с Core Reporting API</a></li>
+<li class="chapter" data-level="6.7.5" data-path="-2-api-.html"><a href="-2-api-.html#--multi-channel-funnels-api"><i class="fa fa-check"></i><b>6.7.5</b> Работа с Multi-Channel Funnels API</a></li>
+<li class="chapter" data-level="6.7.6" data-path="-2-api-.html"><a href="-2-api-.html#--real-time-reporting-api"><i class="fa fa-check"></i><b>6.7.6</b> Работа с Real time reporting API</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="-2-api-.html"><a href="-2-api-.html#---api--"><i class="fa fa-check"></i><b>6.8</b> Загрузка данных из API Яндекс Метрики</a><ul>
+<li class="chapter" data-level="6.8.1" data-path="-2-api-.html"><a href="-2-api-.html#----api--"><i class="fa fa-check"></i><b>6.8.1</b> Авторизация для работы с API Яндекс Метрики</a></li>
+<li class="chapter" data-level="6.8.2" data-path="-2-api-.html"><a href="-2-api-.html#----api---"><i class="fa fa-check"></i><b>6.8.2</b> Функции для работы с API управления Яндекс Метрики</a></li>
+<li class="chapter" data-level="6.8.3" data-path="-2-api-.html"><a href="-2-api-.html#---api---"><i class="fa fa-check"></i><b>6.8.3</b> Загрузка данных из API отчётов Яндекс Метрики</a></li>
+<li class="chapter" data-level="6.8.4" data-path="-2-api-.html"><a href="-2-api-.html#---logs-api--"><i class="fa fa-check"></i><b>6.8.4</b> Загрузка данных из Logs API Яндекс Метрики</a></li>
+<li class="chapter" data-level="6.8.5" data-path="-2-api-.html"><a href="-2-api-.html#---api-----core-reporting-api-google-analytics"><i class="fa fa-check"></i><b>6.8.5</b> Загрузка данных из API Яндекс Метрики совместимого с Core Reporting API Google Analytics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="-2-api-.html"><a href="-2-api-.html#--google-search-console"><i class="fa fa-check"></i><b>6.9</b> Работа с Google Search Console</a><ul>
+<li class="chapter" data-level="6.9.1" data-path="-2-api-.html"><a href="-2-api-.html#----5000---1-"><i class="fa fa-check"></i><b>6.9.1</b> Как обойти ограничение в 5000 строк на 1 запрос</a></li>
+</ul></li>
+<li class="chapter" data-level="6.10" data-path="-2-api-.html"><a href="-2-api-.html#--google-trends"><i class="fa fa-check"></i><b>6.10</b> Работа с Google Trends</a><ul>
+<li class="chapter" data-level="6.10.1" data-path="-2-api-.html"><a href="-2-api-.html#-----google-trends"><i class="fa fa-check"></i><b>6.10.1</b> Манипуляция с данными полученными из Google Trends</a></li>
+</ul></li>
+<li class="chapter" data-level="6.11" data-path="-1-r-.html"><a href="-1-r-.html#--"><i class="fa fa-check"></i><b>6.11</b> Парсинг веб сайтов</a><ul>
+<li class="chapter" data-level="6.11.1" data-path="-1-r-.html"><a href="-1-r-.html#----"><i class="fa fa-check"></i><b>6.11.1</b> Поиск элементов на веб странице</a></li>
+<li class="chapter" data-level="6.11.2" data-path="-2-api-.html"><a href="-2-api-.html#-----html-"><i class="fa fa-check"></i><b>6.11.2</b> Извлечение значений из полученныз элементов HTML страницы</a></li>
+<li class="chapter" data-level="6.11.3" data-path="a-.html"><a href="a-.html#---"><i class="fa fa-check"></i><b>6.11.3</b> Имитация пользовательской веб сессии</a></li>
+</ul></li>
+<li class="chapter" data-level="6.12" data-path="-2-api-.html"><a href="-2-api-.html#-http-"><i class="fa fa-check"></i><b>6.12</b> отправка HTTP запросов</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="-3-api-.html"><a href="-3-api-.html"><i class="fa fa-check"></i><b>7</b> Модуль 3: Работа с загруженными из API интерфейсов различных сервисов данными.</a><ul>
+<li class="chapter" data-level="7.1" data-path="-3-api-.html"><a href="-3-api-.html#-----google-"><i class="fa fa-check"></i><b>7.1</b> Отправка и стение данных из Google Таблиц</a></li>
+<li class="chapter" data-level="7.2" data-path="-3-api-.html"><a href="-3-api-.html#-----ggplot2"><i class="fa fa-check"></i><b>7.2</b> Визуализация данных с помощью пакета ggplot2</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="-3-api-.html"><a href="-3-api-.html#---qplot"><i class="fa fa-check"></i><b>7.2.1</b> Быстрый график, функция <code>qplot</code></a></li>
+<li class="chapter" data-level="7.2.2" data-path="a-.html"><a href="a-.html#---"><i class="fa fa-check"></i><b>7.2.2</b> Построение графиков наложением слоёв</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="-3-api-.html"><a href="-3-api-.html#----dbi-------"><i class="fa fa-check"></i><b>7.3</b> Работа с базами данных, DBI - Интерфейс взаимодействия с базами данных</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="-3-api-.html"><a href="-3-api-.html#---mysql"><i class="fa fa-check"></i><b>7.3.1</b> Работа с СУБД MySQL</a></li>
+<li class="chapter" data-level="7.3.2" data-path="-3-api-.html"><a href="-3-api-.html#----postgresql"><i class="fa fa-check"></i><b>7.3.2</b> Работа с базой данных PostgreSQL</a></li>
+<li class="chapter" data-level="7.3.3" data-path="-3-api-.html"><a href="-3-api-.html#----sqlite"><i class="fa fa-check"></i><b>7.3.3</b> Работа с базой данных SQLite</a></li>
+<li class="chapter" data-level="7.3.4" data-path="-3-api-.html"><a href="-3-api-.html#-----google-bigquery"><i class="fa fa-check"></i><b>7.3.4</b> Работа с облачной базой данных Google BigQuery</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="-1-r-.html"><a href="-1-r-.html#----r"><i class="fa fa-check"></i><b>7.4</b> Отправка почты с помощью R</a></li>
+<li class="chapter" data-level="7.5" data-path="-3-api-.html"><a href="-3-api-.html#---r---"><i class="fa fa-check"></i><b>7.5</b> Как настроить запуск R скриптов по рассписанию</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="a-.html"><a href="a-.html#---"><i class="fa fa-check"></i><b>7.5.1</b> Настройка расписание через плагин</a></li>
+<li class="chapter" data-level="7.5.2" data-path="-3-api-.html"><a href="-3-api-.html#------taskscheduler"><i class="fa fa-check"></i><b>7.5.2</b> Настройка расписание с помощью функций пакета taskscheduleR</a></li>
+<li class="chapter" data-level="7.5.3" data-path="-3-api-.html"><a href="-3-api-.html#------windows"><i class="fa fa-check"></i><b>7.5.3</b> Ручная настройка рассписания через планировщик задач Windows</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Язык R в интернет маркетинге</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Язык R в интернет маркетинге</h1>
+<h4 class="author"><em>Алексей Селезнёв</em></h4>
+<h4 class="date"><em>2018-09-20</em></h4>
+</div>
+<div id="section-1" class="section level1">
+<h1><span class="header-section-number">1</span> Описание</h1>
+<p>Данная методичка представляет из себя краткий конспект курса “Язык R в интернет маркетинга”, и поможет студентам в поиске нужных материалов по завершению курса для решения своих повседневных задач.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="a-.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"text": "Edit"
+},
+"download": ["r_for_marketing.pdf", "r_for_marketing.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
