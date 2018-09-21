@@ -25,7 +25,7 @@
 <meta name="author" content="Алексей Селезнёв">
 
 
-<meta name="date" content="2018-09-20">
+<meta name="date" content="2018-09-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -527,16 +527,16 @@ users<span class="op">$</span>Names[ users<span class="op">$</span>Age <span cla
 <pre><code>## &#39;data.frame&#39;:    5 obs. of  4 variables:
 ##  $ Names     : Factor w/ 4 levels &quot;Алексей&quot;,&quot;Виктор&quot;,..: 1 3 4 2 3
 ##  $ Age       : num  34 25 39 30 28
-##  $ Country_id: int  4 1 9 2 5
+##  $ Country_id: int  9 9 1 9 5
 ##  $ Id        : int  1 2 3 4 5</code></pre>
 <p>Получить описательные стаистики количественнх переменных и информацию о качественных переменных можно с помощью команды summary.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(users)    <span class="co"># описательные таблицы</span></code></pre></div>
 <pre><code>##      Names        Age         Country_id        Id   
 ##  Алексей:1   Min.   :25.0   Min.   :1.0   Min.   :1  
-##  Виктор :1   1st Qu.:28.0   1st Qu.:2.0   1st Qu.:2  
-##  Денис  :2   Median :30.0   Median :4.0   Median :3  
-##  Николай:1   Mean   :31.2   Mean   :4.2   Mean   :3  
-##              3rd Qu.:34.0   3rd Qu.:5.0   3rd Qu.:4  
+##  Виктор :1   1st Qu.:28.0   1st Qu.:5.0   1st Qu.:2  
+##  Денис  :2   Median :30.0   Median :9.0   Median :3  
+##  Николай:1   Mean   :31.2   Mean   :6.6   Mean   :3  
+##              3rd Qu.:34.0   3rd Qu.:9.0   3rd Qu.:4  
 ##              Max.   :39.0   Max.   :9.0   Max.   :5</code></pre>
 </div>
 <div id="-" class="section level4">
