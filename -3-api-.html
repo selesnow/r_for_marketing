@@ -25,7 +25,7 @@
 <meta name="author" content="Алексей Селезнёв">
 
 
-<meta name="date" content="2018-10-02">
+<meta name="date" content="2018-10-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -568,7 +568,7 @@ ym_data &lt;-<span class="st"> </span><span class="kw">rym_get_logs</span>(<span
 <span class="kw">ggplot</span>(<span class="dt">data =</span> ym_data, <span class="kw">aes</span>(<span class="dt">x =</span> ym.s.lastTrafficSource, <span class="dt">y =</span> ym.s.pageViews)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">ylim</span>(<span class="dv">0</span>, <span class="dv">20</span>)</code></pre></div>
-<pre><code>## Warning: Removed 5898 rows containing non-finite values (stat_boxplot).</code></pre>
+<pre><code>## Warning: Removed 5885 rows containing non-finite values (stat_boxplot).</code></pre>
 <p><img src="r_for_marketing_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Теперь попрбуем изменить цвет ящиков в зависимости от медианного значения количества просмотров, и с помощь функции <code>scale_fill_gradient</code> укажем тчо мы хотим градиентный переход в зависимости от этого значения.</li>

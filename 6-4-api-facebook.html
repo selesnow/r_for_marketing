@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Язык R в интернет маркетинге" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”" />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Алексей Селезнёв" />
+
+<meta name="date" content="2018-10-03" />
+
+
+<meta name="description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”">
+
+<title>Язык R в интернет маркетинге</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#section-1"><span class="toc-section-number">1</span> Описание</a></li>
+<li class="has-sub"><a href="2-a-.html#a----"><span class="toc-section-number">2</span> a - О курсе</a><ul>
+<li><a href="2-1-.html#---"><span class="toc-section-number">2.1</span> Для кого этот курс</a></li>
+<li><a href="2-2-.html#-----"><span class="toc-section-number">2.2</span> Какие знания требуются для прохождения курса</a></li>
+<li><a href="2-3-.html#-------"><span class="toc-section-number">2.3</span> Какие темы не будут затронуты в ходе курса</a></li>
+<li><a href="2-4-.html#------"><span class="toc-section-number">2.4</span> Что вы будете уметь поосле проождения курса</a></li>
+<li><a href="2-5-.html#-"><span class="toc-section-number">2.5</span> Поддержка студентов</a></li>
+<li><a href="2-5-.html#-"><span class="toc-section-number">2.6</span> Конспект курса</a></li>
+<li><a href="2-5-.html#-"><span class="toc-section-number">2.7</span> Программа курса</a></li>
+</ul></li>
+<li><a href="3-b-.html#b----"><span class="toc-section-number">3</span> b - Об авторе</a></li>
+<li><a href="4-c-.html#c---"><span class="toc-section-number">4</span> c - Благодарности</a></li>
+<li class="has-sub"><a href="5-1-r-.html#-1---r."><span class="toc-section-number">5</span> Модуль 1: Введение в R.</a><ul>
+<li><a href="5-1-r.html#---r"><span class="toc-section-number">5.1</span> История создания языка R</a></li>
+<li><a href="5-2-r-.html#--r."><span class="toc-section-number">5.2</span> Преимущества языка R.</a></li>
+<li class="has-sub"><a href="5-3-r-rstudio.html#--r----rstudio"><span class="toc-section-number">5.3</span> Установка языка R и среды разработки RStudio</a><ul>
+<li><a href="5-3-r-rstudio.html#---r--rstudio"><span class="toc-section-number">5.3.1</span> Ссылки для загрузки R и RStudio</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-4-power-bi-r-.html#------power-bi---r-."><span class="toc-section-number">5.4</span> Загрузка, преобразование и визуализация данных в Power BI с помощью R скриптов.</a><ul>
+<li><a href="5-4-power-bi-r-.html#---power-bi."><span class="toc-section-number">5.4.1</span> Загрузка данных в Power BI.</a></li>
+<li><a href="5-4-power-bi-r-.html#---power-bi-power-query."><span class="toc-section-number">5.4.2</span> Преобразование данных в Power BI (power query).</a></li>
+<li><a href="5-4-power-bi-r-.html#---power-bi------r."><span class="toc-section-number">5.4.3</span> Визуализация данных в Power BI с помощью визуального элемента скрипта R.</a></li>
+<li><a href="5-4-power-bi-r-.html#---power-bi--r-."><span class="toc-section-number">5.4.4</span> Использование пользовательских параметров Power BI в R скриптах.</a></li>
+</ul></li>
+<li><a href="5-5-rstudio.html#--rstudio"><span class="toc-section-number">5.5</span> Среда разработки RStudio</a></li>
+<li class="has-sub"><a href="5-6-r.html#----r"><span class="toc-section-number">5.6</span> Классы объектов в языке R</a><ul>
+<li><a href="5-6-r.html#section-5.6.1"><span class="toc-section-number">5.6.1</span> Векторы</a></li>
+<li><a href="5-6-r.html#-data.frame"><span class="toc-section-number">5.6.2</span> Таблицы (data.frame)</a></li>
+<li><a href="5-6-r.html#-list"><span class="toc-section-number">5.6.3</span> Списки (list)</a></li>
+<li><a href="5-6-r.html#--"><span class="toc-section-number">5.6.4</span> Проверить класс объекта</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-7-r.html#-----r"><span class="toc-section-number">5.7</span> Работа со строками на языке R</a><ul>
+<li><a href="5-7-r.html#-------r"><span class="toc-section-number">5.7.1</span> Базовые возможности для работы со строками в R</a></li>
+<li><a href="5-7-r.html#------stringr"><span class="toc-section-number">5.7.2</span> Работа со строками с помощью пакета stringr</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-8-csv-excel-json-r.html#---csv-excel--json---r"><span class="toc-section-number">5.8</span> Загрузка данных из csv, excel и json файлов в R</a><ul>
+<li><a href="5-8-csv-excel-json-r.html#---csv-"><span class="toc-section-number">5.8.1</span> Загрузка данных из csv файлов</a></li>
+<li><a href="5-8-csv-excel-json-r.html#---excel-"><span class="toc-section-number">5.8.2</span> Загрузка данных из Excel файлов</a></li>
+<li><a href="5-8-csv-excel-json-r.html#---json-"><span class="toc-section-number">5.8.3</span> Загрузка данных из JSON файлов</a></li>
+</ul></li>
+<li><a href="5-9-r.html#------r"><span class="toc-section-number">5.9</span> Агрегирующие функции и арифметические операции в R</a></li>
+<li class="has-sub"><a href="5-10-.html#-----."><span class="toc-section-number">5.10</span> Манипуляция с данными, (группировка и агреция).</a><ul>
+<li><a href="5-10-.html#-dplyr"><span class="toc-section-number">5.10.1</span> Пакет dplyr</a></li>
+<li><a href="5-10-.html#-data.table"><span class="toc-section-number">5.10.2</span> Пакет data.table</a></li>
+<li><a href="5-10-.html#-sqldf"><span class="toc-section-number">5.10.3</span> Пакет sqldf</a></li>
+<li><a href="5-10-.html#-tidyr"><span class="toc-section-number">5.10.4</span> Пакет tidyr</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-11-r-lubridate-.html#------r--lubridate."><span class="toc-section-number">5.11</span> Работа с датами и временем в R, пакет lubridate.</a><ul>
+<li><a href="5-11-r-lubridate-.html#---------r"><span class="toc-section-number">5.11.1</span> Базовые возможности по работе с датой и временем в R</a></li>
+<li><a href="5-11-r-lubridate-.html#-lubridate"><span class="toc-section-number">5.11.2</span> Пакет lubridate</a></li>
+</ul></li>
+<li><a href="5-12-if-ifelse-switch-r.html#--if-ifelse-switch--r"><span class="toc-section-number">5.12</span> Условные конструкции if, ifelse, switch в R</a></li>
+<li class="has-sub"><a href="5-13-for-while.html#-for--while"><span class="toc-section-number">5.13</span> Циклы for и while</a><ul>
+<li><a href="5-13-for-while.html#-for"><span class="toc-section-number">5.13.1</span> Цикл for</a></li>
+<li><a href="5-13-for-while.html#-while"><span class="toc-section-number">5.13.2</span> Цикл while</a></li>
+</ul></li>
+<li><a href="5-7-r.html#-----r"><span class="toc-section-number">5.14</span> Разработка собственных функций в языке R</a></li>
+<li><a href="5-15-r-try.html#---r--try"><span class="toc-section-number">5.15</span> Обработка ошибок в R, функция try</a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">5.16</span> Рекомендации по оформлению кода</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-2-api-.html#-2---api--."><span class="toc-section-number">6</span> Модуль 2: Работа с API рекламных площадок.</a><ul>
+<li class="has-sub"><a href="6-1-api.html#--api"><span class="toc-section-number">6.1</span> Что такое API</a><ul>
+<li><a href="6-1-api.html#-http-"><span class="toc-section-number">6.1.1</span> Типы HTTP запросов</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-2-api-google-ads.html#--api-google-ads"><span class="toc-section-number">6.2</span> Работа с API Google Ads</a><ul>
+<li><a href="6-2-api-google-ads.html#----api-google-ads"><span class="toc-section-number">6.2.1</span> Как получить доступ к API Google Ads</a></li>
+<li><a href="6-2-api-google-ads.html#--api-google-ads"><span class="toc-section-number">6.2.2</span> Как устроен API Google Ads</a></li>
+<li><a href="6-2-api-google-ads.html#-radwords"><span class="toc-section-number">6.2.3</span> Пакет RAdwords</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-3-api-.html#--api--"><span class="toc-section-number">6.3</span> Работа с API Яндекс Директ</a><ul>
+<li><a href="6-3-api-.html#-ryandexdirect"><span class="toc-section-number">6.3.1</span> Пакет ryandexdirect</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-4-api-facebook.html#--api-facebook"><span class="toc-section-number">6.4</span> Работа с API Facebook</a><ul>
+<li><a href="6-4-api-facebook.html#---facebook"><span class="toc-section-number">6.4.1</span> Создание приложения в Facebook</a></li>
+<li><a href="6-4-api-facebook.html#--api-facebook"><span class="toc-section-number">6.4.2</span> Авторизация в API Facebook</a></li>
+<li><a href="6-4-api-facebook.html#-----facebook"><span class="toc-section-number">6.4.3</span> Загрузка объектов из рекламного кабинета Facebook</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-5-api-vk-com.html#--api--vk.com"><span class="toc-section-number">6.5</span> Работа с API Вконтакте (vk.com)</a><ul>
+<li><a href="6-5-api-vk-com.html#-----api-"><span class="toc-section-number">6.5.1</span> Создание приложения для работы с API Вконтакте</a></li>
+<li><a href="6-5-api-vk-com.html#--api-"><span class="toc-section-number">6.5.2</span> Авторизация в API Вконтакте</a></li>
+<li><a href="6-5-api-vk-com.html#--rvkstat"><span class="toc-section-number">6.5.3</span> Функции пакета rvkstat</a></li>
+<li><a href="2-2-.html#-----"><span class="toc-section-number">6.5.4</span> Загрузка объектов из рекламного кабинета Вконтакте</a></li>
+<li><a href="2-2-.html#-----"><span class="toc-section-number">6.5.5</span> Загрузка статистики из рекламного кабинета Вконтакте</a></li>
+<li><a href="2-4-.html#------"><span class="toc-section-number">6.5.6</span> Загрузка статистики по сообществам и группам Вконтакте</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-6-api-mytarget.html#--api-mytarget"><span class="toc-section-number">6.6</span> Работа с API MyTarget</a><ul>
+<li><a href="6-6-api-mytarget.html#--api-mytarget"><span class="toc-section-number">6.6.1</span> Авторизация в API MyTarget</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-7-google-analytics.html#---google-analytics"><span class="toc-section-number">6.7</span> Загрузка данных из Google Analytics</a><ul>
+<li><a href="6-7-google-analytics.html#-api----google-analytics"><span class="toc-section-number">6.7.1</span> Какие API интерфейсы доступны в Google Analytics</a></li>
+<li><a href="6-7-google-analytics.html#--api-google-analytics"><span class="toc-section-number">6.7.2</span> Авторизация в API Google Analytics</a></li>
+<li><a href="6-7-google-analytics.html#--management-api"><span class="toc-section-number">6.7.3</span> Работа с Management API</a></li>
+<li><a href="6-7-google-analytics.html#--core-reporting-api"><span class="toc-section-number">6.7.4</span> Работа с Core Reporting API</a></li>
+<li><a href="6-7-google-analytics.html#--multi-channel-funnels-api"><span class="toc-section-number">6.7.5</span> Работа с Multi-Channel Funnels API</a></li>
+<li><a href="6-7-google-analytics.html#--real-time-reporting-api"><span class="toc-section-number">6.7.6</span> Работа с Real time reporting API</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-3-api-.html#---api--"><span class="toc-section-number">6.8</span> Загрузка данных из API Яндекс Метрики</a><ul>
+<li><a href="6-3-api-.html#----api--"><span class="toc-section-number">6.8.1</span> Авторизация для работы с API Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#----api---"><span class="toc-section-number">6.8.2</span> Функции для работы с API управления Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#---api---"><span class="toc-section-number">6.8.3</span> Загрузка данных из API отчётов Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#---logs-api--"><span class="toc-section-number">6.8.4</span> Загрузка данных из Logs API Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#---api-----core-reporting-api-google-analytics"><span class="toc-section-number">6.8.5</span> Загрузка данных из API Яндекс Метрики совместимого с Core Reporting API Google Analytics</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-9-google-search-console.html#--google-search-console"><span class="toc-section-number">6.9</span> Работа с Google Search Console</a><ul>
+<li><a href="6-9-google-search-console.html#----5000---1-"><span class="toc-section-number">6.9.1</span> Как обойти ограничение в 5000 строк на 1 запрос</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-10-google-trends.html#--google-trends"><span class="toc-section-number">6.10</span> Работа с Google Trends</a><ul>
+<li><a href="6-10-google-trends.html#-----google-trends"><span class="toc-section-number">6.10.1</span> Манипуляция с данными полученными из Google Trends</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-6-r.html#--"><span class="toc-section-number">6.11</span> Парсинг веб сайтов</a><ul>
+<li><a href="5-6-r.html#----"><span class="toc-section-number">6.11.1</span> Поиск элементов на веб странице</a></li>
+<li><a href="6-11-.html#-----html-"><span class="toc-section-number">6.11.2</span> Извлечение значений из полученныз элементов HTML страницы</a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">6.11.3</span> Имитация пользовательской веб сессии</a></li>
+</ul></li>
+<li><a href="6-1-api.html#-http-"><span class="toc-section-number">6.12</span> отправка HTTP запросов</a></li>
+</ul></li>
+<li class="has-sub"><a href="7-3-api-.html#-3-----api----."><span class="toc-section-number">7</span> Модуль 3: Работа с загруженными из API интерфейсов различных сервисов данными.</a><ul>
+<li><a href="7-1-google-.html#-----google-"><span class="toc-section-number">7.1</span> Отправка и стение данных из Google Таблиц</a></li>
+<li class="has-sub"><a href="7-2-ggplot2.html#-----ggplot2"><span class="toc-section-number">7.2</span> Визуализация данных с помощью пакета ggplot2</a><ul>
+<li><a href="7-2-ggplot2.html#---qplot"><span class="toc-section-number">7.2.1</span> Быстрый график, функция <code>qplot</code></a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">7.2.2</span> Построение графиков наложением слоёв</a></li>
+</ul></li>
+<li class="has-sub"><a href="7-3-dbi-.html#----dbi-------"><span class="toc-section-number">7.3</span> Работа с базами данных, DBI - Интерфейс взаимодействия с базами данных</a><ul>
+<li><a href="7-3-dbi-.html#---mysql"><span class="toc-section-number">7.3.1</span> Работа с СУБД MySQL</a></li>
+<li><a href="7-3-dbi-.html#----postgresql"><span class="toc-section-number">7.3.2</span> Работа с базой данных PostgreSQL</a></li>
+<li><a href="7-3-dbi-.html#----sqlite"><span class="toc-section-number">7.3.3</span> Работа с базой данных SQLite</a></li>
+<li><a href="7-3-dbi-.html#-----google-bigquery"><span class="toc-section-number">7.3.4</span> Работа с облачной базой данных Google BigQuery</a></li>
+</ul></li>
+<li><a href="5-6-r.html#----r"><span class="toc-section-number">7.4</span> Отправка почты с помощью R</a></li>
+<li class="has-sub"><a href="7-5-r-.html#---r---"><span class="toc-section-number">7.5</span> Как настроить запуск R скриптов по рассписанию</a><ul>
+<li><a href="2-1-.html#---"><span class="toc-section-number">7.5.1</span> Настройка расписание через плагин</a></li>
+<li><a href="7-5-r-.html#------taskscheduler"><span class="toc-section-number">7.5.2</span> Настройка расписание с помощью функций пакета taskscheduleR</a></li>
+<li><a href="7-5-r-.html#------windows"><span class="toc-section-number">7.5.3</span> Ручная настройка рассписания через планировщик задач Windows</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="8-r-r-sources.html#-----r-r-sources"><span class="toc-section-number">8</span> Полезные, русскоязычные ресурсы по языку R (r sources)</a><ul>
+<li><a href="2-1-.html#---"><span class="toc-section-number">8.1</span> Группы в социальных сетях</a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">8.2</span> Телеграмм каналы и чаты</a></li>
+<li><a href="8-3-section-8-3.html#section-8.3"><span class="toc-section-number">8.3</span> Блоги</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="--api-facebook" class="section level2">
+<h2><span class="header-section-number">6.4</span> Работа с API Facebook</h2>
+<p>Для работы с API Facebook мною был разработан пакет <code>rfacebookstat</code>, функции данного пакета позволяют.</p>
+<ol style="list-style-type: decimal">
+<li>Загружать объекты из рекламного кабинета Facebook.</li>
+<li>Загружать статистику из рекламных кабинетов Facebook.</li>
+<li>Управлять доступами к реламным кабинетам Facebook.</li>
+</ol>
+<p>Установить пакет <code>rfacebookstat</code> можно как из моего репозитория на GitHub, так и из основного репозитория CRAN.</p>
+<ul>
+<li>Установка с GitHub - <code>devtools::install_github('selesnow/rfacebokstat')</code></li>
+<li>Установка с CRAN - <code>install.packages('rfacebookstat')</code></li>
+</ul>
+<div id="---facebook" class="section level3">
+<h3><span class="header-section-number">6.4.1</span> Создание приложения в Facebook</h3>
+<p>Для доступа к API Facebook вам необходимо создать приложение в веб интерфейсе Facebook.</p>
+<p>1, В основном меню Facebook выберите пункт “Управление приложениями” или перейдите по <a href="https://developers.facebook.com/apps/">этой ссылке</a>.</p>
+<div class="figure">
+<img src="r_for_marketing_2018_files/figure-html/fb_app_1.png" alt="Создание приложения в Facebook" />
+<p class="caption">Создание приложения в Facebook</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>Нажмите кнопку “Добавить новое приложение”, которая находится в правом верхнем углу.</li>
+<li>Заполните поля в открывшемся дилоговом окне “Создайте ID приложения” и нажмите кнопку ЭСоздайте ID приложения&quot;</li>
+<li>Добавьте продукты “API Marketing” и “Вход через Facebook”</li>
+</ol>
+<div class="figure">
+<img src="r_for_marketing_2018_files/figure-html/fb_app_2.png" alt="Добавление продуктов" />
+<p class="caption">Добавление продуктов</p>
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li>В настройка продукта “Вход через Facebook” установите в качестве Действительные URI перенаправления для OAuth ссылку - <a href="https://selesnow.github.io/rfacebookstat/getToken/get_token.html" class="uri">https://selesnow.github.io/rfacebookstat/getToken/get_token.html</a> <img src="r_for_marketing_2018_files/figure-html/fb_app_3.png" alt="Настраиваем доступ через Facebook" /></li>
+</ol>
+</div>
+<div id="--api-facebook" class="section level3">
+<h3><span class="header-section-number">6.4.2</span> Авторизация в API Facebook</h3>
+<p>Для прохождения процесса авторизации в API Facebook вам необходимо использовать 2 функции:</p>
+<ul>
+<li><code>fbGetToken</code> - Для получения краткосрочного токена.</li>
+<li><code>fbGetLongTimeToken</code> - Для обмена кратсрочного токена на долгосрочный.</li>
+</ul>
+<p>В качестве аргументов вам понадобится информация по идентификатору и секрету созданного на прошлом шаге приложения, найти эту информацию можно в его настройках, перейдя в меню “Основное.” <img src="https://img.netpeak.ua/alsey/153660172179_kiss_20kb.png" alt="Настройки приложения" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># авторизация в API</span>
+<span class="co"># краткосрочный токен</span>
+my_st_token &lt;-<span class="st"> </span><span class="kw">fbGetToken</span>(<span class="dt">app_id =</span> <span class="dv">1672451129546934</span>)
+
+<span class="co"># долгосрочный токен</span>
+fb_token    &lt;-<span class="st"> </span><span class="kw">fbGetLongTimeToken</span>(<span class="dt">client_id =</span> <span class="dv">1672451129546934</span>,
+                                  <span class="dt">client_secret =</span> <span class="st">&quot;a6c01acdb9a4100216de5f8874adbce5&quot;</span>,
+                                  <span class="dt">fb_exchange_token =</span> my_st_token)
+
+<span class="co"># Сохраняем токен</span>
+<span class="kw">save</span>(<span class="dt">file =</span> <span class="st">&quot;fb_token.RData&quot;</span>)</code></pre></div>
+<p>Таким образом мы авторизовались в API, поменяли краткосрочный токен на долгосрочный, и сохранили его в рабочей директории в файл fb_token.RData.</p>
+</div>
+<div id="-----facebook" class="section level3">
+<h3><span class="header-section-number">6.4.3</span> Загрузка объектов из рекламного кабинета Facebook</h3>
+<p>Для загрузки различных объектов из рекламного кабинета в пакете <strong>rfacebookstat</strong> существуют одноимённые функции.</p>
+<div id="----" class="section level4">
+<h4><span class="header-section-number">6.4.3.1</span> Загрузка объектов из бизнес менеджера</h4>
+<ul>
+<li><code>fbGetBusinessManagers</code> - Загрузка списка доступных бизнес менеджеров</li>
+<li><code>fbGetProjects</code> - Загрузка списка проектов из бизнес менеджера</li>
+<li><code>fbGetAdAccounts</code> - Загрузка списка рекламных аккаунтов</li>
+<li><code>fbGetPages</code> - Загрузка списка продвигаемых страниц из проектоа</li>
+<li><code>fbGetApps</code> - Загрузка списка приложений</li>
+</ul>
+<p><strong>Аргументы</strong> которые встречаются в функциях для загрузки объектов из бизнес менеджера:</p>
+<ul>
+<li>access_token - Токен полученный при авторизации в API</li>
+<li>bussiness_id - ID бизнес менеджера</li>
+<li>source_id - ID бизнес менеджера или проекта</li>
+<li>projects_id - ID проекта</li>
+</ul>
+<p><strong>Пример</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># бизнес менеджеры</span>
+my_fb_bm   &lt;-<span class="st"> </span><span class="kw">fbGetBusinessManagers</span>(<span class="dt">access_token =</span> fb_token)
+
+<span class="co"># проекты из бизнес менеджера</span>
+my_fb_proj &lt;-<span class="st"> </span><span class="kw">fbGetProjects</span>(<span class="dt">bussiness_id =</span> my_fb_bm<span class="op">$</span>id,
+                            <span class="dt">access_token =</span> fb_token)
+<span class="co"># рекламные аккаунты</span>
+my_fb_acc  &lt;-<span class="st"> </span><span class="kw">fbGetAdAccounts</span>(<span class="dt">source_id =</span> my_fb_bm<span class="op">$</span>id,
+                              <span class="dt">access_token =</span> fb_token)
+<span class="co"># страницы</span>
+my_fb_page &lt;-<span class="st"> </span><span class="kw">fbGetPages</span>(<span class="dt">projects_id =</span> my_fb_proj<span class="op">$</span>id, <span class="dt">access_token =</span> fb_token)
+<span class="co"># приложения</span>
+my_fb_apps &lt;-<span class="st"> </span><span class="kw">fbGetApps</span>(<span class="dt">projects_id =</span> my_fb_proj<span class="op">$</span>id, <span class="dt">access_token =</span> fb_token)</code></pre></div>
+</div>
+<div id="----" class="section level4">
+<h4><span class="header-section-number">6.4.3.2</span> Загрузка объектов из рекламного аккаунта</h4>
+<ul>
+<li><code>fbGetCampaigns</code> - Загрузка списка рекламных кампаний</li>
+<li><code>fbGetAdSets</code> - Загрузка списка групп объявлений</li>
+<li><code>fbGetAds</code> -Загрузка списка объявлений</li>
+<li><code>fbGetAdCreative</code> - Загрузка контента объявлений</li>
+</ul>
+<p><strong>Аргументы</strong> которые встречаются в функциях для загрузки объектов из рекламного аккаунта:</p>
+<ul>
+<li>accounts_id - ID рекламного кабинета, в формате act_00000000000</li>
+<li>access_token - Токен полученный при авторизации в API</li>
+</ul>
+<p><strong>Пример</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Объекты рекламного аккаунта</span>
+<span class="co"># кампании</span>
+my_fb_camp &lt;-<span class="st"> </span><span class="kw">fbGetCampaigns</span>(<span class="dt">accounts_id  =</span> <span class="st">&quot;act_262115113&quot;</span>,
+                             <span class="dt">access_token =</span> fb_token)
+
+<span class="co"># группы объявлений</span>
+my_fb_adsets &lt;-<span class="st"> </span><span class="kw">fbGetAdSets</span>(<span class="dt">accounts_id  =</span> <span class="st">&quot;act_262115113&quot;</span>,
+                            <span class="dt">access_token =</span> fb_token)
+<span class="co"># объявления</span>
+my_fb_ads    &lt;-<span class="st"> </span><span class="kw">fbGetAds</span>(<span class="dt">accounts_id  =</span> <span class="st">&quot;act_262115113&quot;</span>,
+                         <span class="dt">access_token =</span> fb_token)
+
+<span class="co"># контент объявлений</span>
+my_fb_ad_content &lt;-<span class="st"> </span><span class="kw">fbGetAdCreative</span>(<span class="dt">accounts_id  =</span> <span class="st">&quot;act_262115113&quot;</span>,
+                                    <span class="dt">access_token =</span> fb_token)</code></pre></div>
+</div>
+<div id="-----facebook" class="section level4">
+<h4><span class="header-section-number">6.4.3.3</span> Загрузка статистики из рекламного аккаунта Facebook</h4>
+<p>Статистику из рекламного кабинета можно получить с помощью функции <code>fbGetMarketingStat</code>.</p>
+<p><strong>Аргументы</strong> доступные в функции <code>fbGetMarketingStat</code>:</p>
+<ul>
+<li><p>accounts_id — ID рекламного аккаунта. Это обязательный аргумент. Вы можете получить его из URL, если перейдете в нужный рекламный аккаунт Facebook, указывайте ID аккаунта с приставкой «act_», как в примере: accounts_id = “act_000000000000”.</p></li>
+<li><p>sorting — cортировка данных. Необязательный аргумент. На входе принимает список полей и направление сортировки (по возрастанию или по убыванию). Пример: reach_descending, impressions_ascending.</p></li>
+<li><p>level — уровень детализации данных. Обязательный аргумент. Принимает значения ad, adset, campaign, account. Пример — level = “account”.</p></li>
+<li><p>fields — список полей, по которым вы планируете получить данные. Обязательный аргумент. Пример: fields = “account_id,account_name,campaign_name,impressions,unique_impressions,clicks,unique_clicks,reach,spend”. Актуальный список всех доступных полей можно посмотреть в официальной документации к API по <a href="https://developers.facebook.com/docs/marketing-api/insights/fields/">ссылке</a>.</p></li>
+<li><p>filtering — фильтр данных. Необязательный аргумент. Фильтры задаются в виде JSON объектов «ключ:значение». Необходимо прописать три свойства:</p>
+<ul>
+<li>field — поле, по которому будет осуществляться фильтрация;</li>
+<li>operator — оператор логического значения (‘EQUAL’, ‘NOT_EQUAL’, ‘GREATER_THAN’, ‘GREATER_THAN_OR_EQUAL’, ‘LESS_THAN’, ‘LESS_THAN_OR_EQUAL’, ‘IN_RANGE’, ‘NOT_IN_RANGE’, ‘CONTAIN’, ‘NOT_CONTAIN’, ‘IN’, ‘NOT_IN’, ‘ANY’, ‘ALL’, ‘NONE’);</li>
+<li>value — значения, по которому будет фильтроваться указанное поле. Пример: filtering = “[{‘field’:‘publisher_platform’,‘operator’:‘IN’,‘value’:[‘instagram’]}]</li>
+</ul></li>
+<li><p>breakdowns — аргумент, с помощью которого можно получить данные в разбивке на различные сегменты. Список доступных срезов информации, а так же информацию о том как они могут друг с другом сочитаться можно посмотреть в официальной документации к API по <a href="https://developers.facebook.com/docs/marketing-api/insights/breakdowns/">ссылке</a>.</p></li>
+<li><p>date_start — начальная дата отчетного периода в формате YYYY-MM-DDD.</p></li>
+<li><p>date_stop — конечная дата отчетного периода в формате YYYY-MM-DDD.</p></li>
+<li><p>interval - временная разбивка, допустимые значения “day”, “week”, “month”, “quarter”, “year”, “overall”</p></li>
+<li>console_type - текстовое значение, тип ответов в консоли, принимает одно из двух значений:
+<ul>
+<li>progressbar (по умолчанию) - для вывода в консоли прогресс бара, отображающего % загруженных даных.</li>
+<li>message - для вывода сообщений о процессе загрузки, например вывод сообщений о том, что был запущен механизм обхода пользовательского лимита на количество допустимых запросов к API Facebook.</li>
+</ul></li>
+<li>request_speed - скорость оправки запросов к API, в зависимости от уровня доступа вашего приложения установите следующее значение:
+<ul>
+<li>Уровень доступа к API Development - “slow”</li>
+<li>Уровень доступа к API Basic - “normal”</li>
+<li>Уровень доступа к API Standart - “fast” Подробно работа с этим аргументом описана <a href="https://alexeyseleznev.wordpress.com/2017/12/26/rfacebookstat-1-5-0-%D0%BA%D0%B0%D0%BA-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B0%D1%80%D0%B3%D1%83%D0%BC/">тут</a>. Информация об уровнях доступа к API Facebook находится <a href="https://developers.facebook.com/docs/marketing-api/access">тут</a>.</li>
+</ul></li>
+<li><p>api_version — версия API Facebook, в формате v<em>.</em>, например “v3.1”</p></li>
+<li><p>access_token — токен доступа.</p></li>
+</ul>
+<p><strong>Пример</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my_fb_stats &lt;-<span class="st"> </span><span class="kw">fbGetMarketingStat</span>(<span class="dt">accounts_id =</span> <span class="st">&quot;act_262115113&quot;</span>,
+                                  <span class="dt">level =</span> <span class="st">&quot;campaign&quot;</span>,
+                                  <span class="dt">fields =</span> <span class="st">&quot;account_name,campaign_name,impressions,clicks&quot;</span>,
+                                  <span class="dt">breakdowns =</span> <span class="st">&quot;device_platform&quot;</span>,
+                                  <span class="dt">date_start =</span> <span class="st">&quot;2018-08-01&quot;</span>,
+                                  <span class="dt">date_stop =</span> <span class="st">&quot;2018-08-07&quot;</span>,
+                                  <span class="dt">interval =</span> <span class="st">&quot;day&quot;</span>,
+                                  <span class="dt">access_token =</span> fb_token)</code></pre></div>
+</div>
+<div id="--------facebook" class="section level4">
+<h4><span class="header-section-number">6.4.3.4</span> Управление списком пользователей и доступами к рекламного аккаунта Facebook</h4>
+<ul>
+<li><code>fbGetAdAccountUsers</code> - Получить список пользователей из рекламного аккаунта</li>
+<li><code>fbDeleteAdAccountUsers</code> - Удалить пользователя рекламого аккаунта</li>
+<li><code>fbUpdateAdAccountUsers</code> - Добавить пользователя в рекламный аккаунт.</li>
+</ul>
+<p><strong>Аргументы</strong></p>
+<ul>
+<li>accounts_id - ID рекламного аккаунта в формате act_0000000000</li>
+<li>access_token - Токен доступа к API Facebook</li>
+<li>user_ids - ID пользователя</li>
+<li>role - Роль, которая определяет набор порав, которые будут у пользователя рекламного аккаунта, возможные значения: administator, advertiser, ad manager, analyst, sales, direct sales. Подробнее о полях можно узнать по <a href="https://developers.facebook.com/docs/marketing-api/aduser/">ссылке</a>.</li>
+</ul>
+<p><strong>Пример</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># управление пользователями</span>
+<span class="co"># загрузка списка пользоватеелей</span>
+fb_acc_user &lt;-<span class="st"> </span><span class="kw">fbGetAdAccountUsers</span>(<span class="dt">accounts_id  =</span>  <span class="st">&quot;act_262115113&quot;</span>,
+                                   <span class="dt">access_token =</span> fb_token,
+                                   <span class="dt">console_type =</span> <span class="st">&quot;message&quot;</span>)
+
+<span class="co"># удаление пользователя с ID 823041644481205</span>
+<span class="kw">fbDeleteAdAccountUsers</span>(<span class="dt">user_ids =</span> <span class="st">&quot;823041644481205&quot;</span>,
+                       <span class="dt">accounts_id  =</span>  <span class="st">&quot;act_262115113&quot;</span>,
+                       <span class="dt">access_token =</span> fb_token,
+                       <span class="dt">api_version =</span> <span class="st">&quot;v3.1&quot;</span>)
+
+<span class="co"># загрузка списка пользоватеелей</span>
+fb_acc_user2 &lt;-<span class="st"> </span><span class="kw">fbGetAdAccountUsers</span>(<span class="dt">accounts_id  =</span>  <span class="st">&quot;act_262115113&quot;</span>,
+                                    <span class="dt">access_token =</span> fb_token,
+                                    <span class="dt">console_type =</span> <span class="st">&quot;message&quot;</span>)
+
+<span class="co"># сравнение списка пользователей до и после удаления пользователя с ID 823041644481205</span>
+<span class="kw">all.equal</span>(fb_acc_user, fb_acc_user2)
+
+<span class="co"># добавление пользователя</span>
+<span class="kw">fbUpdateAdAccountUsers</span>(<span class="dt">user_ids =</span> <span class="st">&quot;823041644481205&quot;</span>, 
+                       <span class="dt">accounts_id =</span> <span class="st">&quot;act_262115113&quot;</span>, 
+                       <span class="dt">role =</span> <span class="st">&quot;advertiser&quot;</span>,
+                       <span class="dt">access_token =</span> fb_token)</code></pre></div>
+</div>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="6-3-api-.html"><button class="btn btn-default">Previous</button></a>
+<a href="6-5-api-vk-com.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

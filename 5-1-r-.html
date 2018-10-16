@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Язык R в интернет маркетинге" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”" />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Алексей Селезнёв" />
+
+<meta name="date" content="2018-10-03" />
+
+
+<meta name="description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”">
+
+<title>Язык R в интернет маркетинге</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#section-1"><span class="toc-section-number">1</span> Описание</a></li>
+<li class="has-sub"><a href="2-a-.html#a----"><span class="toc-section-number">2</span> a - О курсе</a><ul>
+<li><a href="2-1-.html#---"><span class="toc-section-number">2.1</span> Для кого этот курс</a></li>
+<li><a href="2-2-.html#-----"><span class="toc-section-number">2.2</span> Какие знания требуются для прохождения курса</a></li>
+<li><a href="2-3-.html#-------"><span class="toc-section-number">2.3</span> Какие темы не будут затронуты в ходе курса</a></li>
+<li><a href="2-4-.html#------"><span class="toc-section-number">2.4</span> Что вы будете уметь поосле проождения курса</a></li>
+<li><a href="2-5-.html#-"><span class="toc-section-number">2.5</span> Поддержка студентов</a></li>
+<li><a href="2-5-.html#-"><span class="toc-section-number">2.6</span> Конспект курса</a></li>
+<li><a href="2-5-.html#-"><span class="toc-section-number">2.7</span> Программа курса</a></li>
+</ul></li>
+<li><a href="3-b-.html#b----"><span class="toc-section-number">3</span> b - Об авторе</a></li>
+<li><a href="4-c-.html#c---"><span class="toc-section-number">4</span> c - Благодарности</a></li>
+<li class="has-sub"><a href="5-1-r-.html#-1---r."><span class="toc-section-number">5</span> Модуль 1: Введение в R.</a><ul>
+<li><a href="5-1-r.html#---r"><span class="toc-section-number">5.1</span> История создания языка R</a></li>
+<li><a href="5-2-r-.html#--r."><span class="toc-section-number">5.2</span> Преимущества языка R.</a></li>
+<li class="has-sub"><a href="5-3-r-rstudio.html#--r----rstudio"><span class="toc-section-number">5.3</span> Установка языка R и среды разработки RStudio</a><ul>
+<li><a href="5-3-r-rstudio.html#---r--rstudio"><span class="toc-section-number">5.3.1</span> Ссылки для загрузки R и RStudio</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-4-power-bi-r-.html#------power-bi---r-."><span class="toc-section-number">5.4</span> Загрузка, преобразование и визуализация данных в Power BI с помощью R скриптов.</a><ul>
+<li><a href="5-4-power-bi-r-.html#---power-bi."><span class="toc-section-number">5.4.1</span> Загрузка данных в Power BI.</a></li>
+<li><a href="5-4-power-bi-r-.html#---power-bi-power-query."><span class="toc-section-number">5.4.2</span> Преобразование данных в Power BI (power query).</a></li>
+<li><a href="5-4-power-bi-r-.html#---power-bi------r."><span class="toc-section-number">5.4.3</span> Визуализация данных в Power BI с помощью визуального элемента скрипта R.</a></li>
+<li><a href="5-4-power-bi-r-.html#---power-bi--r-."><span class="toc-section-number">5.4.4</span> Использование пользовательских параметров Power BI в R скриптах.</a></li>
+</ul></li>
+<li><a href="5-5-rstudio.html#--rstudio"><span class="toc-section-number">5.5</span> Среда разработки RStudio</a></li>
+<li class="has-sub"><a href="5-6-r.html#----r"><span class="toc-section-number">5.6</span> Классы объектов в языке R</a><ul>
+<li><a href="5-6-r.html#section-5.6.1"><span class="toc-section-number">5.6.1</span> Векторы</a></li>
+<li><a href="5-6-r.html#-data.frame"><span class="toc-section-number">5.6.2</span> Таблицы (data.frame)</a></li>
+<li><a href="5-6-r.html#-list"><span class="toc-section-number">5.6.3</span> Списки (list)</a></li>
+<li><a href="5-6-r.html#--"><span class="toc-section-number">5.6.4</span> Проверить класс объекта</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-7-r.html#-----r"><span class="toc-section-number">5.7</span> Работа со строками на языке R</a><ul>
+<li><a href="5-7-r.html#-------r"><span class="toc-section-number">5.7.1</span> Базовые возможности для работы со строками в R</a></li>
+<li><a href="5-7-r.html#------stringr"><span class="toc-section-number">5.7.2</span> Работа со строками с помощью пакета stringr</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-8-csv-excel-json-r.html#---csv-excel--json---r"><span class="toc-section-number">5.8</span> Загрузка данных из csv, excel и json файлов в R</a><ul>
+<li><a href="5-8-csv-excel-json-r.html#---csv-"><span class="toc-section-number">5.8.1</span> Загрузка данных из csv файлов</a></li>
+<li><a href="5-8-csv-excel-json-r.html#---excel-"><span class="toc-section-number">5.8.2</span> Загрузка данных из Excel файлов</a></li>
+<li><a href="5-8-csv-excel-json-r.html#---json-"><span class="toc-section-number">5.8.3</span> Загрузка данных из JSON файлов</a></li>
+</ul></li>
+<li><a href="5-9-r.html#------r"><span class="toc-section-number">5.9</span> Агрегирующие функции и арифметические операции в R</a></li>
+<li class="has-sub"><a href="5-10-.html#-----."><span class="toc-section-number">5.10</span> Манипуляция с данными, (группировка и агреция).</a><ul>
+<li><a href="5-10-.html#-dplyr"><span class="toc-section-number">5.10.1</span> Пакет dplyr</a></li>
+<li><a href="5-10-.html#-data.table"><span class="toc-section-number">5.10.2</span> Пакет data.table</a></li>
+<li><a href="5-10-.html#-sqldf"><span class="toc-section-number">5.10.3</span> Пакет sqldf</a></li>
+<li><a href="5-10-.html#-tidyr"><span class="toc-section-number">5.10.4</span> Пакет tidyr</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-11-r-lubridate-.html#------r--lubridate."><span class="toc-section-number">5.11</span> Работа с датами и временем в R, пакет lubridate.</a><ul>
+<li><a href="5-11-r-lubridate-.html#---------r"><span class="toc-section-number">5.11.1</span> Базовые возможности по работе с датой и временем в R</a></li>
+<li><a href="5-11-r-lubridate-.html#-lubridate"><span class="toc-section-number">5.11.2</span> Пакет lubridate</a></li>
+</ul></li>
+<li><a href="5-12-if-ifelse-switch-r.html#--if-ifelse-switch--r"><span class="toc-section-number">5.12</span> Условные конструкции if, ifelse, switch в R</a></li>
+<li class="has-sub"><a href="5-13-for-while.html#-for--while"><span class="toc-section-number">5.13</span> Циклы for и while</a><ul>
+<li><a href="5-13-for-while.html#-for"><span class="toc-section-number">5.13.1</span> Цикл for</a></li>
+<li><a href="5-13-for-while.html#-while"><span class="toc-section-number">5.13.2</span> Цикл while</a></li>
+</ul></li>
+<li><a href="5-7-r.html#-----r"><span class="toc-section-number">5.14</span> Разработка собственных функций в языке R</a></li>
+<li><a href="5-15-r-try.html#---r--try"><span class="toc-section-number">5.15</span> Обработка ошибок в R, функция try</a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">5.16</span> Рекомендации по оформлению кода</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-2-api-.html#-2---api--."><span class="toc-section-number">6</span> Модуль 2: Работа с API рекламных площадок.</a><ul>
+<li class="has-sub"><a href="6-1-api.html#--api"><span class="toc-section-number">6.1</span> Что такое API</a><ul>
+<li><a href="6-1-api.html#-http-"><span class="toc-section-number">6.1.1</span> Типы HTTP запросов</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-2-api-google-ads.html#--api-google-ads"><span class="toc-section-number">6.2</span> Работа с API Google Ads</a><ul>
+<li><a href="6-2-api-google-ads.html#----api-google-ads"><span class="toc-section-number">6.2.1</span> Как получить доступ к API Google Ads</a></li>
+<li><a href="6-2-api-google-ads.html#--api-google-ads"><span class="toc-section-number">6.2.2</span> Как устроен API Google Ads</a></li>
+<li><a href="6-2-api-google-ads.html#-radwords"><span class="toc-section-number">6.2.3</span> Пакет RAdwords</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-3-api-.html#--api--"><span class="toc-section-number">6.3</span> Работа с API Яндекс Директ</a><ul>
+<li><a href="6-3-api-.html#-ryandexdirect"><span class="toc-section-number">6.3.1</span> Пакет ryandexdirect</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-4-api-facebook.html#--api-facebook"><span class="toc-section-number">6.4</span> Работа с API Facebook</a><ul>
+<li><a href="6-4-api-facebook.html#---facebook"><span class="toc-section-number">6.4.1</span> Создание приложения в Facebook</a></li>
+<li><a href="6-4-api-facebook.html#--api-facebook"><span class="toc-section-number">6.4.2</span> Авторизация в API Facebook</a></li>
+<li><a href="6-4-api-facebook.html#-----facebook"><span class="toc-section-number">6.4.3</span> Загрузка объектов из рекламного кабинета Facebook</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-5-api-vk-com.html#--api--vk.com"><span class="toc-section-number">6.5</span> Работа с API Вконтакте (vk.com)</a><ul>
+<li><a href="6-5-api-vk-com.html#-----api-"><span class="toc-section-number">6.5.1</span> Создание приложения для работы с API Вконтакте</a></li>
+<li><a href="6-5-api-vk-com.html#--api-"><span class="toc-section-number">6.5.2</span> Авторизация в API Вконтакте</a></li>
+<li><a href="6-5-api-vk-com.html#--rvkstat"><span class="toc-section-number">6.5.3</span> Функции пакета rvkstat</a></li>
+<li><a href="2-2-.html#-----"><span class="toc-section-number">6.5.4</span> Загрузка объектов из рекламного кабинета Вконтакте</a></li>
+<li><a href="2-2-.html#-----"><span class="toc-section-number">6.5.5</span> Загрузка статистики из рекламного кабинета Вконтакте</a></li>
+<li><a href="2-4-.html#------"><span class="toc-section-number">6.5.6</span> Загрузка статистики по сообществам и группам Вконтакте</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-6-api-mytarget.html#--api-mytarget"><span class="toc-section-number">6.6</span> Работа с API MyTarget</a><ul>
+<li><a href="6-6-api-mytarget.html#--api-mytarget"><span class="toc-section-number">6.6.1</span> Авторизация в API MyTarget</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-7-google-analytics.html#---google-analytics"><span class="toc-section-number">6.7</span> Загрузка данных из Google Analytics</a><ul>
+<li><a href="6-7-google-analytics.html#-api----google-analytics"><span class="toc-section-number">6.7.1</span> Какие API интерфейсы доступны в Google Analytics</a></li>
+<li><a href="6-7-google-analytics.html#--api-google-analytics"><span class="toc-section-number">6.7.2</span> Авторизация в API Google Analytics</a></li>
+<li><a href="6-7-google-analytics.html#--management-api"><span class="toc-section-number">6.7.3</span> Работа с Management API</a></li>
+<li><a href="6-7-google-analytics.html#--core-reporting-api"><span class="toc-section-number">6.7.4</span> Работа с Core Reporting API</a></li>
+<li><a href="6-7-google-analytics.html#--multi-channel-funnels-api"><span class="toc-section-number">6.7.5</span> Работа с Multi-Channel Funnels API</a></li>
+<li><a href="6-7-google-analytics.html#--real-time-reporting-api"><span class="toc-section-number">6.7.6</span> Работа с Real time reporting API</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-3-api-.html#---api--"><span class="toc-section-number">6.8</span> Загрузка данных из API Яндекс Метрики</a><ul>
+<li><a href="6-3-api-.html#----api--"><span class="toc-section-number">6.8.1</span> Авторизация для работы с API Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#----api---"><span class="toc-section-number">6.8.2</span> Функции для работы с API управления Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#---api---"><span class="toc-section-number">6.8.3</span> Загрузка данных из API отчётов Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#---logs-api--"><span class="toc-section-number">6.8.4</span> Загрузка данных из Logs API Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#---api-----core-reporting-api-google-analytics"><span class="toc-section-number">6.8.5</span> Загрузка данных из API Яндекс Метрики совместимого с Core Reporting API Google Analytics</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-9-google-search-console.html#--google-search-console"><span class="toc-section-number">6.9</span> Работа с Google Search Console</a><ul>
+<li><a href="6-9-google-search-console.html#----5000---1-"><span class="toc-section-number">6.9.1</span> Как обойти ограничение в 5000 строк на 1 запрос</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-10-google-trends.html#--google-trends"><span class="toc-section-number">6.10</span> Работа с Google Trends</a><ul>
+<li><a href="6-10-google-trends.html#-----google-trends"><span class="toc-section-number">6.10.1</span> Манипуляция с данными полученными из Google Trends</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-6-r.html#--"><span class="toc-section-number">6.11</span> Парсинг веб сайтов</a><ul>
+<li><a href="5-6-r.html#----"><span class="toc-section-number">6.11.1</span> Поиск элементов на веб странице</a></li>
+<li><a href="6-11-.html#-----html-"><span class="toc-section-number">6.11.2</span> Извлечение значений из полученныз элементов HTML страницы</a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">6.11.3</span> Имитация пользовательской веб сессии</a></li>
+</ul></li>
+<li><a href="6-1-api.html#-http-"><span class="toc-section-number">6.12</span> отправка HTTP запросов</a></li>
+</ul></li>
+<li class="has-sub"><a href="7-3-api-.html#-3-----api----."><span class="toc-section-number">7</span> Модуль 3: Работа с загруженными из API интерфейсов различных сервисов данными.</a><ul>
+<li><a href="7-1-google-.html#-----google-"><span class="toc-section-number">7.1</span> Отправка и стение данных из Google Таблиц</a></li>
+<li class="has-sub"><a href="7-2-ggplot2.html#-----ggplot2"><span class="toc-section-number">7.2</span> Визуализация данных с помощью пакета ggplot2</a><ul>
+<li><a href="7-2-ggplot2.html#---qplot"><span class="toc-section-number">7.2.1</span> Быстрый график, функция <code>qplot</code></a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">7.2.2</span> Построение графиков наложением слоёв</a></li>
+</ul></li>
+<li class="has-sub"><a href="7-3-dbi-.html#----dbi-------"><span class="toc-section-number">7.3</span> Работа с базами данных, DBI - Интерфейс взаимодействия с базами данных</a><ul>
+<li><a href="7-3-dbi-.html#---mysql"><span class="toc-section-number">7.3.1</span> Работа с СУБД MySQL</a></li>
+<li><a href="7-3-dbi-.html#----postgresql"><span class="toc-section-number">7.3.2</span> Работа с базой данных PostgreSQL</a></li>
+<li><a href="7-3-dbi-.html#----sqlite"><span class="toc-section-number">7.3.3</span> Работа с базой данных SQLite</a></li>
+<li><a href="7-3-dbi-.html#-----google-bigquery"><span class="toc-section-number">7.3.4</span> Работа с облачной базой данных Google BigQuery</a></li>
+</ul></li>
+<li><a href="5-6-r.html#----r"><span class="toc-section-number">7.4</span> Отправка почты с помощью R</a></li>
+<li class="has-sub"><a href="7-5-r-.html#---r---"><span class="toc-section-number">7.5</span> Как настроить запуск R скриптов по рассписанию</a><ul>
+<li><a href="2-1-.html#---"><span class="toc-section-number">7.5.1</span> Настройка расписание через плагин</a></li>
+<li><a href="7-5-r-.html#------taskscheduler"><span class="toc-section-number">7.5.2</span> Настройка расписание с помощью функций пакета taskscheduleR</a></li>
+<li><a href="7-5-r-.html#------windows"><span class="toc-section-number">7.5.3</span> Ручная настройка рассписания через планировщик задач Windows</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="8-r-r-sources.html#-----r-r-sources"><span class="toc-section-number">8</span> Полезные, русскоязычные ресурсы по языку R (r sources)</a><ul>
+<li><a href="2-1-.html#---"><span class="toc-section-number">8.1</span> Группы в социальных сетях</a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">8.2</span> Телеграмм каналы и чаты</a></li>
+<li><a href="8-3-section-8-3.html#section-8.3"><span class="toc-section-number">8.3</span> Блоги</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="-1---r." class="section level1">
+<h1><span class="header-section-number">5</span> Модуль 1: Введение в R.</h1>
+<p>Первый модуль курса посвящён введению в язык R, в ходе модуля рассматривается следующие темы:</p>
+<ul>
+<li>История, возможности, преимущества и недостатки языка R.</li>
+<li>Загрузка и установка языка R и среды разработки RStudio.</li>
+<li>Области применения R скриптов в Power BI.</li>
+<li>Знакомство со средой разработки RStudio.</li>
+<li>Основные классы объектов в R
+<ul>
+<li>Векторы в R, что такое вектор, как обращаться к элементам вектора, основные типы данных в R.</li>
+<li>Data frame, основной класс объектов в R, как выбирать столбцы, строки, проводить расчёты.</li>
+<li>List - Списки.</li>
+</ul></li>
+<li>R пакеты.
+<ul>
+<li>Как упростить и ускорить работу с таблицами с помощью пакета data.table.</li>
+<li>Манипуляция с данными с помощью пакета dplyr.</li>
+<li>Преобразование данных с помощью пакета tidyr.</li>
+</ul></li>
+<li>Циклы в R (for и while), синтаксис, пример использования.</li>
+</ul> 
+</div>
+<p style="text-align: center;">
+<a href="4-c-.html"><button class="btn btn-default">Previous</button></a>
+<a href="5-1-r.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

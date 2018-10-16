@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Язык R в интернет маркетинге" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”" />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Алексей Селезнёв" />
+
+<meta name="date" content="2018-10-03" />
+
+
+<meta name="description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”">
+
+<title>Язык R в интернет маркетинге</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#section-1"><span class="toc-section-number">1</span> Описание</a></li>
+<li class="has-sub"><a href="2-a-.html#a----"><span class="toc-section-number">2</span> a - О курсе</a><ul>
+<li><a href="2-1-.html#---"><span class="toc-section-number">2.1</span> Для кого этот курс</a></li>
+<li><a href="2-2-.html#-----"><span class="toc-section-number">2.2</span> Какие знания требуются для прохождения курса</a></li>
+<li><a href="2-3-.html#-------"><span class="toc-section-number">2.3</span> Какие темы не будут затронуты в ходе курса</a></li>
+<li><a href="2-4-.html#------"><span class="toc-section-number">2.4</span> Что вы будете уметь поосле проождения курса</a></li>
+<li><a href="2-5-.html#-"><span class="toc-section-number">2.5</span> Поддержка студентов</a></li>
+<li><a href="2-5-.html#-"><span class="toc-section-number">2.6</span> Конспект курса</a></li>
+<li><a href="2-5-.html#-"><span class="toc-section-number">2.7</span> Программа курса</a></li>
+</ul></li>
+<li><a href="3-b-.html#b----"><span class="toc-section-number">3</span> b - Об авторе</a></li>
+<li><a href="4-c-.html#c---"><span class="toc-section-number">4</span> c - Благодарности</a></li>
+<li class="has-sub"><a href="5-1-r-.html#-1---r."><span class="toc-section-number">5</span> Модуль 1: Введение в R.</a><ul>
+<li><a href="5-1-r.html#---r"><span class="toc-section-number">5.1</span> История создания языка R</a></li>
+<li><a href="5-2-r-.html#--r."><span class="toc-section-number">5.2</span> Преимущества языка R.</a></li>
+<li class="has-sub"><a href="5-3-r-rstudio.html#--r----rstudio"><span class="toc-section-number">5.3</span> Установка языка R и среды разработки RStudio</a><ul>
+<li><a href="5-3-r-rstudio.html#---r--rstudio"><span class="toc-section-number">5.3.1</span> Ссылки для загрузки R и RStudio</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-4-power-bi-r-.html#------power-bi---r-."><span class="toc-section-number">5.4</span> Загрузка, преобразование и визуализация данных в Power BI с помощью R скриптов.</a><ul>
+<li><a href="5-4-power-bi-r-.html#---power-bi."><span class="toc-section-number">5.4.1</span> Загрузка данных в Power BI.</a></li>
+<li><a href="5-4-power-bi-r-.html#---power-bi-power-query."><span class="toc-section-number">5.4.2</span> Преобразование данных в Power BI (power query).</a></li>
+<li><a href="5-4-power-bi-r-.html#---power-bi------r."><span class="toc-section-number">5.4.3</span> Визуализация данных в Power BI с помощью визуального элемента скрипта R.</a></li>
+<li><a href="5-4-power-bi-r-.html#---power-bi--r-."><span class="toc-section-number">5.4.4</span> Использование пользовательских параметров Power BI в R скриптах.</a></li>
+</ul></li>
+<li><a href="5-5-rstudio.html#--rstudio"><span class="toc-section-number">5.5</span> Среда разработки RStudio</a></li>
+<li class="has-sub"><a href="5-6-r.html#----r"><span class="toc-section-number">5.6</span> Классы объектов в языке R</a><ul>
+<li><a href="5-6-r.html#section-5.6.1"><span class="toc-section-number">5.6.1</span> Векторы</a></li>
+<li><a href="5-6-r.html#-data.frame"><span class="toc-section-number">5.6.2</span> Таблицы (data.frame)</a></li>
+<li><a href="5-6-r.html#-list"><span class="toc-section-number">5.6.3</span> Списки (list)</a></li>
+<li><a href="5-6-r.html#--"><span class="toc-section-number">5.6.4</span> Проверить класс объекта</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-7-r.html#-----r"><span class="toc-section-number">5.7</span> Работа со строками на языке R</a><ul>
+<li><a href="5-7-r.html#-------r"><span class="toc-section-number">5.7.1</span> Базовые возможности для работы со строками в R</a></li>
+<li><a href="5-7-r.html#------stringr"><span class="toc-section-number">5.7.2</span> Работа со строками с помощью пакета stringr</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-8-csv-excel-json-r.html#---csv-excel--json---r"><span class="toc-section-number">5.8</span> Загрузка данных из csv, excel и json файлов в R</a><ul>
+<li><a href="5-8-csv-excel-json-r.html#---csv-"><span class="toc-section-number">5.8.1</span> Загрузка данных из csv файлов</a></li>
+<li><a href="5-8-csv-excel-json-r.html#---excel-"><span class="toc-section-number">5.8.2</span> Загрузка данных из Excel файлов</a></li>
+<li><a href="5-8-csv-excel-json-r.html#---json-"><span class="toc-section-number">5.8.3</span> Загрузка данных из JSON файлов</a></li>
+</ul></li>
+<li><a href="5-9-r.html#------r"><span class="toc-section-number">5.9</span> Агрегирующие функции и арифметические операции в R</a></li>
+<li class="has-sub"><a href="5-10-.html#-----."><span class="toc-section-number">5.10</span> Манипуляция с данными, (группировка и агреция).</a><ul>
+<li><a href="5-10-.html#-dplyr"><span class="toc-section-number">5.10.1</span> Пакет dplyr</a></li>
+<li><a href="5-10-.html#-data.table"><span class="toc-section-number">5.10.2</span> Пакет data.table</a></li>
+<li><a href="5-10-.html#-sqldf"><span class="toc-section-number">5.10.3</span> Пакет sqldf</a></li>
+<li><a href="5-10-.html#-tidyr"><span class="toc-section-number">5.10.4</span> Пакет tidyr</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-11-r-lubridate-.html#------r--lubridate."><span class="toc-section-number">5.11</span> Работа с датами и временем в R, пакет lubridate.</a><ul>
+<li><a href="5-11-r-lubridate-.html#---------r"><span class="toc-section-number">5.11.1</span> Базовые возможности по работе с датой и временем в R</a></li>
+<li><a href="5-11-r-lubridate-.html#-lubridate"><span class="toc-section-number">5.11.2</span> Пакет lubridate</a></li>
+</ul></li>
+<li><a href="5-12-if-ifelse-switch-r.html#--if-ifelse-switch--r"><span class="toc-section-number">5.12</span> Условные конструкции if, ifelse, switch в R</a></li>
+<li class="has-sub"><a href="5-13-for-while.html#-for--while"><span class="toc-section-number">5.13</span> Циклы for и while</a><ul>
+<li><a href="5-13-for-while.html#-for"><span class="toc-section-number">5.13.1</span> Цикл for</a></li>
+<li><a href="5-13-for-while.html#-while"><span class="toc-section-number">5.13.2</span> Цикл while</a></li>
+</ul></li>
+<li><a href="5-7-r.html#-----r"><span class="toc-section-number">5.14</span> Разработка собственных функций в языке R</a></li>
+<li><a href="5-15-r-try.html#---r--try"><span class="toc-section-number">5.15</span> Обработка ошибок в R, функция try</a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">5.16</span> Рекомендации по оформлению кода</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-2-api-.html#-2---api--."><span class="toc-section-number">6</span> Модуль 2: Работа с API рекламных площадок.</a><ul>
+<li class="has-sub"><a href="6-1-api.html#--api"><span class="toc-section-number">6.1</span> Что такое API</a><ul>
+<li><a href="6-1-api.html#-http-"><span class="toc-section-number">6.1.1</span> Типы HTTP запросов</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-2-api-google-ads.html#--api-google-ads"><span class="toc-section-number">6.2</span> Работа с API Google Ads</a><ul>
+<li><a href="6-2-api-google-ads.html#----api-google-ads"><span class="toc-section-number">6.2.1</span> Как получить доступ к API Google Ads</a></li>
+<li><a href="6-2-api-google-ads.html#--api-google-ads"><span class="toc-section-number">6.2.2</span> Как устроен API Google Ads</a></li>
+<li><a href="6-2-api-google-ads.html#-radwords"><span class="toc-section-number">6.2.3</span> Пакет RAdwords</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-3-api-.html#--api--"><span class="toc-section-number">6.3</span> Работа с API Яндекс Директ</a><ul>
+<li><a href="6-3-api-.html#-ryandexdirect"><span class="toc-section-number">6.3.1</span> Пакет ryandexdirect</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-4-api-facebook.html#--api-facebook"><span class="toc-section-number">6.4</span> Работа с API Facebook</a><ul>
+<li><a href="6-4-api-facebook.html#---facebook"><span class="toc-section-number">6.4.1</span> Создание приложения в Facebook</a></li>
+<li><a href="6-4-api-facebook.html#--api-facebook"><span class="toc-section-number">6.4.2</span> Авторизация в API Facebook</a></li>
+<li><a href="6-4-api-facebook.html#-----facebook"><span class="toc-section-number">6.4.3</span> Загрузка объектов из рекламного кабинета Facebook</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-5-api-vk-com.html#--api--vk.com"><span class="toc-section-number">6.5</span> Работа с API Вконтакте (vk.com)</a><ul>
+<li><a href="6-5-api-vk-com.html#-----api-"><span class="toc-section-number">6.5.1</span> Создание приложения для работы с API Вконтакте</a></li>
+<li><a href="6-5-api-vk-com.html#--api-"><span class="toc-section-number">6.5.2</span> Авторизация в API Вконтакте</a></li>
+<li><a href="6-5-api-vk-com.html#--rvkstat"><span class="toc-section-number">6.5.3</span> Функции пакета rvkstat</a></li>
+<li><a href="2-2-.html#-----"><span class="toc-section-number">6.5.4</span> Загрузка объектов из рекламного кабинета Вконтакте</a></li>
+<li><a href="2-2-.html#-----"><span class="toc-section-number">6.5.5</span> Загрузка статистики из рекламного кабинета Вконтакте</a></li>
+<li><a href="2-4-.html#------"><span class="toc-section-number">6.5.6</span> Загрузка статистики по сообществам и группам Вконтакте</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-6-api-mytarget.html#--api-mytarget"><span class="toc-section-number">6.6</span> Работа с API MyTarget</a><ul>
+<li><a href="6-6-api-mytarget.html#--api-mytarget"><span class="toc-section-number">6.6.1</span> Авторизация в API MyTarget</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-7-google-analytics.html#---google-analytics"><span class="toc-section-number">6.7</span> Загрузка данных из Google Analytics</a><ul>
+<li><a href="6-7-google-analytics.html#-api----google-analytics"><span class="toc-section-number">6.7.1</span> Какие API интерфейсы доступны в Google Analytics</a></li>
+<li><a href="6-7-google-analytics.html#--api-google-analytics"><span class="toc-section-number">6.7.2</span> Авторизация в API Google Analytics</a></li>
+<li><a href="6-7-google-analytics.html#--management-api"><span class="toc-section-number">6.7.3</span> Работа с Management API</a></li>
+<li><a href="6-7-google-analytics.html#--core-reporting-api"><span class="toc-section-number">6.7.4</span> Работа с Core Reporting API</a></li>
+<li><a href="6-7-google-analytics.html#--multi-channel-funnels-api"><span class="toc-section-number">6.7.5</span> Работа с Multi-Channel Funnels API</a></li>
+<li><a href="6-7-google-analytics.html#--real-time-reporting-api"><span class="toc-section-number">6.7.6</span> Работа с Real time reporting API</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-3-api-.html#---api--"><span class="toc-section-number">6.8</span> Загрузка данных из API Яндекс Метрики</a><ul>
+<li><a href="6-3-api-.html#----api--"><span class="toc-section-number">6.8.1</span> Авторизация для работы с API Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#----api---"><span class="toc-section-number">6.8.2</span> Функции для работы с API управления Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#---api---"><span class="toc-section-number">6.8.3</span> Загрузка данных из API отчётов Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#---logs-api--"><span class="toc-section-number">6.8.4</span> Загрузка данных из Logs API Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#---api-----core-reporting-api-google-analytics"><span class="toc-section-number">6.8.5</span> Загрузка данных из API Яндекс Метрики совместимого с Core Reporting API Google Analytics</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-9-google-search-console.html#--google-search-console"><span class="toc-section-number">6.9</span> Работа с Google Search Console</a><ul>
+<li><a href="6-9-google-search-console.html#----5000---1-"><span class="toc-section-number">6.9.1</span> Как обойти ограничение в 5000 строк на 1 запрос</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-10-google-trends.html#--google-trends"><span class="toc-section-number">6.10</span> Работа с Google Trends</a><ul>
+<li><a href="6-10-google-trends.html#-----google-trends"><span class="toc-section-number">6.10.1</span> Манипуляция с данными полученными из Google Trends</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-6-r.html#--"><span class="toc-section-number">6.11</span> Парсинг веб сайтов</a><ul>
+<li><a href="5-6-r.html#----"><span class="toc-section-number">6.11.1</span> Поиск элементов на веб странице</a></li>
+<li><a href="6-11-.html#-----html-"><span class="toc-section-number">6.11.2</span> Извлечение значений из полученныз элементов HTML страницы</a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">6.11.3</span> Имитация пользовательской веб сессии</a></li>
+</ul></li>
+<li><a href="6-1-api.html#-http-"><span class="toc-section-number">6.12</span> отправка HTTP запросов</a></li>
+</ul></li>
+<li class="has-sub"><a href="7-3-api-.html#-3-----api----."><span class="toc-section-number">7</span> Модуль 3: Работа с загруженными из API интерфейсов различных сервисов данными.</a><ul>
+<li><a href="7-1-google-.html#-----google-"><span class="toc-section-number">7.1</span> Отправка и стение данных из Google Таблиц</a></li>
+<li class="has-sub"><a href="7-2-ggplot2.html#-----ggplot2"><span class="toc-section-number">7.2</span> Визуализация данных с помощью пакета ggplot2</a><ul>
+<li><a href="7-2-ggplot2.html#---qplot"><span class="toc-section-number">7.2.1</span> Быстрый график, функция <code>qplot</code></a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">7.2.2</span> Построение графиков наложением слоёв</a></li>
+</ul></li>
+<li class="has-sub"><a href="7-3-dbi-.html#----dbi-------"><span class="toc-section-number">7.3</span> Работа с базами данных, DBI - Интерфейс взаимодействия с базами данных</a><ul>
+<li><a href="7-3-dbi-.html#---mysql"><span class="toc-section-number">7.3.1</span> Работа с СУБД MySQL</a></li>
+<li><a href="7-3-dbi-.html#----postgresql"><span class="toc-section-number">7.3.2</span> Работа с базой данных PostgreSQL</a></li>
+<li><a href="7-3-dbi-.html#----sqlite"><span class="toc-section-number">7.3.3</span> Работа с базой данных SQLite</a></li>
+<li><a href="7-3-dbi-.html#-----google-bigquery"><span class="toc-section-number">7.3.4</span> Работа с облачной базой данных Google BigQuery</a></li>
+</ul></li>
+<li><a href="5-6-r.html#----r"><span class="toc-section-number">7.4</span> Отправка почты с помощью R</a></li>
+<li class="has-sub"><a href="7-5-r-.html#---r---"><span class="toc-section-number">7.5</span> Как настроить запуск R скриптов по рассписанию</a><ul>
+<li><a href="2-1-.html#---"><span class="toc-section-number">7.5.1</span> Настройка расписание через плагин</a></li>
+<li><a href="7-5-r-.html#------taskscheduler"><span class="toc-section-number">7.5.2</span> Настройка расписание с помощью функций пакета taskscheduleR</a></li>
+<li><a href="7-5-r-.html#------windows"><span class="toc-section-number">7.5.3</span> Ручная настройка рассписания через планировщик задач Windows</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="8-r-r-sources.html#-----r-r-sources"><span class="toc-section-number">8</span> Полезные, русскоязычные ресурсы по языку R (r sources)</a><ul>
+<li><a href="2-1-.html#---"><span class="toc-section-number">8.1</span> Группы в социальных сетях</a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">8.2</span> Телеграмм каналы и чаты</a></li>
+<li><a href="8-3-section-8-3.html#section-8.3"><span class="toc-section-number">8.3</span> Блоги</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="--api-google-ads" class="section level2">
+<h2><span class="header-section-number">6.2</span> Работа с API Google Ads</h2>
+<div id="----api-google-ads" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Как получить доступ к API Google Ads</h3>
+<p>Актуальная информация о том как получить доступ к API Google Ads можно получить в <a href="https://www.google.com/intl/ru/adwords/myclientcenter/">официциальноц справке</a>.</p>
+<p>Для доступа Вам необходимо:</p>
+<ol style="list-style-type: decimal">
+<li>Создать центр клиентов, перейдите по <a href="https://www.google.com/intl/ru/adwords/myclientcenter/">этой ссылке</a> и зарегистрируйте новый центр клиентов, обратите внимание, что центр клиентов можно создать толко в том Google аккаунте к которому ещё не привязан ниодин аккаунт Google Ads.</li>
+<li>Далее необходимо подать заявку на доступ к API, перейдите в Настройки (значок шестеренки в правом верхнем углу) &gt; Настройки аккаунта (раскрывающееся меню) &gt; Центр API AdWords (меню слева). Запонлите все поля и перейдите в форму заполненеия завки нажав на “Уровень доступа”. <img src="r_for_marketing_2018_files\figure-html\adw_api_2.png" alt="Google Ads API report" /></li>
+<li>Далее ваша заявка будет рассмотрена и ободобрена.</li>
+<li>СОздаём приложение в <a href="https://cloud.google.com/">Google Cloud</a>, для этого переходим в консоль google cloud, создаём первый проект, и в нём идём в меню &gt; API и сервисы &gt; учётные данные. <a href="http://img.netpeak.ua/alsey/153454508424_kiss_32kb.png">Google Cloud</a></li>
+<li>Далее жмём кнопку “создать учётные данные” и выбираем “Идентификатор клиента OAuth”. <img src="r_for_marketing_2018_files\figure-html\adw_api_3.png" alt="Google Ads API report" />.</li>
+</ol>
+</div>
+<div id="--api-google-ads" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Как устроен API Google Ads</h3>
+<p>Google Ads является наиболее популярной системой онлайн реклмы в миру, и имеет довольно мощный API интерфейс для работы со статистикой. API состоит из 48 отчётов (версия 201806):</p>
+<ul>
+<li>ACCOUNT PERFORMANCE REPORT<br />
+</li>
+<li>AD CUSTOMIZERS FEED ITEM REPORT</li>
+<li>AD PERFORMANCE REPORT</li>
+<li>ADGROUP PERFORMANCE REPORT</li>
+<li>AGE RANGE PERFORMANCE REPORT</li>
+<li>AUDIENCE PERFORMANCE REPORT</li>
+<li>AUTOMATIC PLACEMENTS PERFORMANCE REPORT<br />
+</li>
+<li>BID GOAL PERFORMANCE REPORT</li>
+<li>BUDGET PERFORMANCE REPORT<br />
+</li>
+<li>CALL METRICS CALL DETAILS REPORT</li>
+<li>CAMPAIGN AD SCHEDULE TARGET REPORT</li>
+<li>CAMPAIGN CRITERIA REPORT</li>
+<li>CAMPAIGN GROUP PERFORMANCE REPORT</li>
+<li>CAMPAIGN LOCATION TARGET REPORT<br />
+</li>
+<li>CAMPAIGN NEGATIVE KEYWORDS PERFORMANCE REPORT<br />
+</li>
+<li>CAMPAIGN NEGATIVE LOCATIONS REPORT<br />
+</li>
+<li>CAMPAIGN NEGATIVE PLACEMENTS PERFORMANCE REPORT</li>
+<li>CAMPAIGN PERFORMANCE REPORT<br />
+</li>
+<li>CAMPAIGN SHARED SET REPORT<br />
+</li>
+<li>CLICK PERFORMANCE REPORT<br />
+</li>
+<li>CREATIVE CONVERSION REPORT<br />
+</li>
+<li>CRITERIA PERFORMANCE REPORT<br />
+</li>
+<li>DESTINATION URL REPORT<br />
+</li>
+<li>DISPLAY KEYWORD PERFORMANCE REPORT<br />
+</li>
+<li>DISPLAY TOPICS PERFORMANCE REPORT<br />
+</li>
+<li>FINAL URL REPORT<br />
+</li>
+<li>GENDER PERFORMANCE REPORT<br />
+</li>
+<li>GEO PERFORMANCE REPORT<br />
+</li>
+<li>KEYWORDLESS CATEGORY REPORT<br />
+</li>
+<li>KEYWORDLESS QUERY REPORT<br />
+</li>
+<li>KEYWORDS PERFORMANCE REPORT<br />
+</li>
+<li>LABEL REPORT<br />
+</li>
+<li>LANDING PAGE REPORT<br />
+</li>
+<li>MARKETPLACE PERFORMANCE REPORT<br />
+</li>
+<li>PAID ORGANIC QUERY REPORT<br />
+</li>
+<li>PARENTAL STATUS PERFORMANCE REPORT<br />
+</li>
+<li>PLACEHOLDER FEED ITEM REPORT<br />
+</li>
+<li>PLACEHOLDER REPORT<br />
+</li>
+<li>PLACEMENT PERFORMANCE REPORT<br />
+</li>
+<li>PRODUCT PARTITION REPORT<br />
+</li>
+<li>SEARCH QUERY PERFORMANCE REPORT<br />
+</li>
+<li>SHARED SET CRITERIA REPORT<br />
+</li>
+<li>SHARED SET REPORT<br />
+</li>
+<li>SHOPPING PERFORMANCE REPORT</li>
+<li>TOP CONTENT PERFORMANCE REPORT<br />
+</li>
+<li>URL PERFORMANCE REPORT</li>
+<li>USER AD DISTANCE REPORT<br />
+</li>
+<li>VIDEO PERFORMANCE REPORT</li>
+</ul>
+<p>Посмотреть актуальный список отчётов можно в <a href="https://developers.google.com/adwords/api/docs/appendix/reports">официальной документации</a>, там же доступно описание каждого отчёта.</p>
+<p>Каждый отчёт отвечает за группировку данных и в свою очередь состоит из полей, каждое поле отчёта может иметь один из трёх типов.</p>
+<div class="figure">
+<img src="r_for_marketing_2018_files\figure-html\adw_api_1.png" alt="Google Ads API report" />
+<p class="caption">Google Ads API report</p>
+</div>
+<ul>
+<li>Атрибут - поле содержит фиксированное значение в соответствии с заданными группировками, добавление такого поля в отчет не приводит к появлению новой группировки;</li>
+<li>Сегмент - при выводе в отчете поле используется для группировки данных;</li>
+<li>Метрика - поле содержит числовое значение, рассчитанное в соответствии с заданными фильтрами и группировками.</li>
+</ul>
+<p>Обращаячь к API вы запрашиваете какие либо поля из любого отчёта, и получается таким образом нужную вам статистику.</p>
+</div>
+<div id="-radwords" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Пакет RAdwords</h3>
+<p>Для работы с API Google Ads в R существует пакет <strong>RAdwords</strong>.</p>
+<p>Ранее, все пакеты которые мы устанавливали, мы скачивали и инсалировали из основного репозитория хранения данных в R CRAN, но пакеты в этом репозитории обновляются медленее чем dev версии пакетов ранящиеся у авторов на GitHub, для установки наиболее актуальных версий пакетов непосредственно из GitHub нам надо установить пакет *devtools** и далее устанавливать пакеты с помощью функции <code>install_github</code>, указав логин автора пакета и название репозитория в котором хранится пакет.</p>
+<p>Например для установки пакета **RAdwords* из репозитория автора можно использовать следующий код:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)
+<span class="kw">library</span>(devtools)
+<span class="kw">install_github</span>(<span class="st">&quot;jburkhardt/RAdwords&quot;</span>)</code></pre></div>
+<p>Где <em>jburkhardt/RAdwords</em> это логин автора RAdwords на GitHub и название репозитория где он хранится, получить их можно из ссылки на репозиторий - <a href="https://github.com/jburkhardt/RAdwords" class="uri">https://github.com/jburkhardt/RAdwords</a>.</p>
+<p><em>Советую обновлять пакет как минимум раз в несколько месяцев, именно с таким интервалом Google релизит новую версию API Google Ads, и для того, что иметь доступ к новому функционалу необходимо обновлять пакет, обновляется пакет точно так же как и устанавливается, с помощью приведённого выше кода.</em></p>
+<p>Теперь давайте перейдём к функциям пакета <em>RAdwords</em>, для того что бы получить список отчётов доступных в какой либо версии API можно воспользоваться функцией <code>reports</code>, для загрузки списка полей, доступных в каком либо отчёте есть функция <code>metrics</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(RAdwords)
+<span class="kw">reports</span>(<span class="dt">apiVersion =</span> <span class="st">&quot;201806&quot;</span>) <span class="co"># список доступных отчётов</span></code></pre></div>
+<pre><code>##  [1] &quot;ACCOUNT_PERFORMANCE_REPORT&quot;                     
+##  [2] &quot;AD_CUSTOMIZERS_FEED_ITEM_REPORT&quot;                
+##  [3] &quot;AD_PERFORMANCE_REPORT&quot;                          
+##  [4] &quot;ADGROUP_PERFORMANCE_REPORT&quot;                     
+##  [5] &quot;AGE_RANGE_PERFORMANCE_REPORT&quot;                   
+##  [6] &quot;AUDIENCE_PERFORMANCE_REPORT&quot;                    
+##  [7] &quot;AUTOMATIC_PLACEMENTS_PERFORMANCE_REPORT&quot;        
+##  [8] &quot;BID_GOAL_PERFORMANCE_REPORT&quot;                    
+##  [9] &quot;BUDGET_PERFORMANCE_REPORT&quot;                      
+## [10] &quot;CALL_METRICS_CALL_DETAILS_REPORT&quot;               
+## [11] &quot;CAMPAIGN_AD_SCHEDULE_TARGET_REPORT&quot;             
+## [12] &quot;CAMPAIGN_CRITERIA_REPORT&quot;                       
+## [13] &quot;CAMPAIGN_GROUP_PERFORMANCE_REPORT&quot;              
+## [14] &quot;CAMPAIGN_LOCATION_TARGET_REPORT&quot;                
+## [15] &quot;CAMPAIGN_NEGATIVE_KEYWORDS_PERFORMANCE_REPORT&quot;  
+## [16] &quot;CAMPAIGN_NEGATIVE_LOCATIONS_REPORT&quot;             
+## [17] &quot;CAMPAIGN_NEGATIVE_PLACEMENTS_PERFORMANCE_REPORT&quot;
+## [18] &quot;CAMPAIGN_PERFORMANCE_REPORT&quot;                    
+## [19] &quot;CAMPAIGN_SHARED_SET_REPORT&quot;                     
+## [20] &quot;CLICK_PERFORMANCE_REPORT&quot;                       
+## [21] &quot;CREATIVE_CONVERSION_REPORT&quot;                     
+## [22] &quot;CRITERIA_PERFORMANCE_REPORT&quot;                    
+## [23] &quot;DESTINATION_URL_REPORT&quot;                         
+## [24] &quot;DISPLAY_KEYWORD_PERFORMANCE_REPORT&quot;             
+## [25] &quot;DISPLAY_TOPICS_PERFORMANCE_REPORT&quot;              
+## [26] &quot;FINAL_URL_REPORT&quot;                               
+## [27] &quot;GENDER_PERFORMANCE_REPORT&quot;                      
+## [28] &quot;GEO_PERFORMANCE_REPORT&quot;                         
+## [29] &quot;KEYWORDLESS_CATEGORY_REPORT&quot;                    
+## [30] &quot;KEYWORDLESS_QUERY_REPORT&quot;                       
+## [31] &quot;KEYWORDS_PERFORMANCE_REPORT&quot;                    
+## [32] &quot;LABEL_REPORT&quot;                                   
+## [33] &quot;LANDING_PAGE_REPORT&quot;                            
+## [34] &quot;MARKETPLACE_PERFORMANCE_REPORT&quot;                 
+## [35] &quot;PAID_ORGANIC_QUERY_REPORT&quot;                      
+## [36] &quot;PARENTAL_STATUS_PERFORMANCE_REPORT&quot;             
+## [37] &quot;PLACEHOLDER_FEED_ITEM_REPORT&quot;                   
+## [38] &quot;PLACEHOLDER_REPORT&quot;                             
+## [39] &quot;PLACEMENT_PERFORMANCE_REPORT&quot;                   
+## [40] &quot;PRODUCT_PARTITION_REPORT&quot;                       
+## [41] &quot;SEARCH_QUERY_PERFORMANCE_REPORT&quot;                
+## [42] &quot;SHARED_SET_CRITERIA_REPORT&quot;                     
+## [43] &quot;SHARED_SET_REPORT&quot;                              
+## [44] &quot;SHOPPING_PERFORMANCE_REPORT&quot;                    
+## [45] &quot;TOP_CONTENT_PERFORMANCE_REPORT&quot;                 
+## [46] &quot;URL_PERFORMANCE_REPORT&quot;                         
+## [47] &quot;USER_AD_DISTANCE_REPORT&quot;                        
+## [48] &quot;VIDEO_PERFORMANCE_REPORT&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">metrics</span>(<span class="dt">report =</span> <span class="st">&quot;CAMPAIGN_PERFORMANCE_REPORT&quot;</span>, <span class="dt">apiVersion =</span> <span class="st">&quot;201806&quot;</span>)</code></pre></div>
+<pre><code>##   [1] AccountCurrencyCode                                  
+##   [2] AccountDescriptiveName                               
+##   [3] AccountTimeZone                                      
+##   [4] ActiveViewCpm                                        
+##   [5] ActiveViewCtr                                        
+##   [6] ActiveViewImpressions                                
+##   [7] ActiveViewMeasurability                              
+##   [8] ActiveViewMeasurableCost                             
+##   [9] ActiveViewMeasurableImpressions                      
+##  [10] ActiveViewViewability                                
+##  [11] AdNetworkType1                                       
+##  [12] AdNetworkType2                                       
+##  [13] AdvertisingChannelSubType                            
+##  [14] AdvertisingChannelType                               
+##  [15] AllConversionRate                                    
+##  [16] AllConversions                                       
+##  [17] AllConversionValue                                   
+##  [18] Amount                                               
+##  [19] AverageCost                                          
+##  [20] AverageCpc                                           
+##  [21] AverageCpe                                           
+##  [22] AverageCpm                                           
+##  [23] AverageCpv                                           
+##  [24] AverageFrequency                                     
+##  [25] AveragePageviews                                     
+##  [26] AveragePosition                                      
+##  [27] AverageTimeOnSite                                    
+##  [28] BaseCampaignId                                       
+##  [29] BiddingStrategyId                                    
+##  [30] BiddingStrategyName                                  
+##  [31] BiddingStrategyType                                  
+##  [32] BounceRate                                           
+##  [33] BudgetId                                             
+##  [34] CampaignDesktopBidModifier                           
+##  [35] CampaignGroupId                                      
+##  [36] CampaignId                                           
+##  [37] CampaignMobileBidModifier                            
+##  [38] CampaignName                                         
+##  [39] CampaignStatus                                       
+##  [40] CampaignTabletBidModifier                            
+##  [41] CampaignTrialType                                    
+##  [42] ClickAssistedConversions                             
+##  [43] ClickAssistedConversionsOverLastClickConversions     
+##  [44] ClickAssistedConversionValue                         
+##  [45] Clicks                                               
+##  [46] ClickType                                            
+##  [47] ContentBudgetLostImpressionShare                     
+##  [48] ContentImpressionShare                               
+##  [49] ContentRankLostImpressionShare                       
+##  [50] ConversionCategoryName                               
+##  [51] ConversionLagBucket                                  
+##  [52] ConversionRate                                       
+##  [53] Conversions                                          
+##  [54] ConversionTrackerId                                  
+##  [55] ConversionTypeName                                   
+##  [56] ConversionValue                                      
+##  [57] Cost                                                 
+##  [58] CostPerAllConversion                                 
+##  [59] CostPerConversion                                    
+##  [60] CostPerCurrentModelAttributedConversion              
+##  [61] CrossDeviceConversions                               
+##  [62] Ctr                                                  
+##  [63] CurrentModelAttributedConversions                    
+##  [64] CurrentModelAttributedConversionValue                
+##  [65] CustomerDescriptiveName                              
+##  [66] Date                                                 
+##  [67] DayOfWeek                                            
+##  [68] Device                                               
+##  [69] EndDate                                              
+##  [70] EngagementRate                                       
+##  [71] Engagements                                          
+##  [72] EnhancedCpcEnabled                                   
+##  [73] ExternalConversionSource                             
+##  [74] ExternalCustomerId                                   
+##  [75] FinalUrlSuffix                                       
+##  [76] GmailForwards                                        
+##  [77] GmailSaves                                           
+##  [78] GmailSecondaryClicks                                 
+##  [79] HourOfDay                                            
+##  [80] ImpressionAssistedConversions                        
+##  [81] ImpressionAssistedConversionsOverLastClickConversions
+##  [82] ImpressionAssistedConversionValue                    
+##  [83] ImpressionReach                                      
+##  [84] Impressions                                          
+##  [85] InteractionRate                                      
+##  [86] Interactions                                         
+##  [87] InteractionTypes                                     
+##  [88] InvalidClickRate                                     
+##  [89] InvalidClicks                                        
+##  [90] IsBudgetExplicitlyShared                             
+##  [91] LabelIds                                             
+##  [92] Labels                                               
+##  [93] MaximizeConversionValueTargetRoas                    
+##  [94] Month                                                
+##  [95] MonthOfYear                                          
+##  [96] NumOfflineImpressions                                
+##  [97] NumOfflineInteractions                               
+##  [98] OfflineInteractionRate                               
+##  [99] PercentNewVisitors                                   
+## [100] Period                                               
+## [101] Quarter                                              
+## [102] RelativeCtr                                          
+## [103] SearchAbsoluteTopImpressionShare                     
+## [104] SearchBudgetLostImpressionShare                      
+## [105] SearchClickShare                                     
+## [106] SearchExactMatchImpressionShare                      
+## [107] SearchImpressionShare                                
+## [108] SearchRankLostImpressionShare                        
+## [109] ServingStatus                                        
+## [110] Slot                                                 
+## [111] StartDate                                            
+## [112] TotalAmount                                          
+## [113] TrackingUrlTemplate                                  
+## [114] UrlCustomParameters                                  
+## [115] ValuePerAllConversion                                
+## [116] ValuePerConversion                                   
+## [117] ValuePerCurrentModelAttributedConversion             
+## [118] VideoQuartile100Rate                                 
+## [119] VideoQuartile25Rate                                  
+## [120] VideoQuartile50Rate                                  
+## [121] VideoQuartile75Rate                                  
+## [122] VideoViewRate                                        
+## [123] VideoViews                                           
+## [124] ViewThroughConversions                               
+## [125] Week                                                 
+## [126] Year                                                 
+## 126 Levels: AccountCurrencyCode AccountDescriptiveName ... Year</code></pre>
+<p>Для работы с API Google Ads вам для начала необходимо авторизоваться под каким либо Google аккаунтом, к которому привязан аккаунт Google Ads. Для авторизации вам необходимо использовать функцию <code>doAuth()</code>. При первом запуске этой функции будет открыт браузер, в котором вы выберите нужный аккаунт и подтвердите к нему доступ, при этом в рабочй директории будет создан файл <em>.google.auth.RData</em>, в котором будут хранится учётные данные для работы с API, в дальнейшем вам не придётся проходить авторизацию через браузер т.к. пакет будет запрашивать все необходимые для работы с API данные уже из локального файла.</p>
+<p>Формирование и отправка запроса на загрузку каких либо данных из API Google Ads осуществляется в два этапа, с помощью функции <code>statement</code> мы формируем запрос, и отправляем с помощью функции <code>getData</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Составляем запрос</span>
+body &lt;-<span class="st"> </span><span class="kw">statement</span>(<span class="dt">select =</span> <span class="kw">c</span>(<span class="st">&quot;Date&quot;</span>,
+                             <span class="st">&quot;CampaignName&quot;</span>,
+                             <span class="st">&quot;Device&quot;</span>,
+                             <span class="st">&quot;Clicks&quot;</span>,
+                             <span class="st">&quot;Impressions&quot;</span>,
+                             <span class="st">&quot;Cost&quot;</span>),
+                  <span class="dt">report =</span> <span class="st">&quot;CAMPAIGN_PERFORMANCE_REPORT&quot;</span>,
+                  <span class="dt">where  =</span> <span class="st">&quot;Impressions &gt; 50&quot;</span>,
+                  <span class="dt">start  =</span> <span class="st">&quot;2018-07-01&quot;</span>,
+                  <span class="dt">end    =</span> <span class="st">&quot;2018-07-31&quot;</span>)
+
+<span class="co"># Запрашиваем данные</span>
+data &lt;-<span class="st"> </span><span class="kw">getData</span>(<span class="dt">clientCustomerId       =</span> <span class="st">&quot;123-456-7890&quot;</span>,
+                <span class="dt">google_auth            =</span> ads_auth,
+                <span class="dt">statement              =</span> body,
+                <span class="dt">includeZeroImpressions =</span> <span class="ot">TRUE</span>)</code></pre></div>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="6-1-api.html"><button class="btn btn-default">Previous</button></a>
+<a href="6-3-api-.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Язык R в интернет маркетинге" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”" />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Алексей Селезнёв" />
+
+<meta name="date" content="2018-10-03" />
+
+
+<meta name="description" content="Методичесткое пособие к авторскому курсу Алексея Селезнёва “Язык R в интернет маркетинге.”">
+
+<title>Язык R в интернет маркетинге</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#section-1"><span class="toc-section-number">1</span> Описание</a></li>
+<li class="has-sub"><a href="2-a-.html#a----"><span class="toc-section-number">2</span> a - О курсе</a><ul>
+<li><a href="2-1-.html#---"><span class="toc-section-number">2.1</span> Для кого этот курс</a></li>
+<li><a href="2-2-.html#-----"><span class="toc-section-number">2.2</span> Какие знания требуются для прохождения курса</a></li>
+<li><a href="2-3-.html#-------"><span class="toc-section-number">2.3</span> Какие темы не будут затронуты в ходе курса</a></li>
+<li><a href="2-4-.html#------"><span class="toc-section-number">2.4</span> Что вы будете уметь поосле проождения курса</a></li>
+<li><a href="2-5-.html#-"><span class="toc-section-number">2.5</span> Поддержка студентов</a></li>
+<li><a href="2-5-.html#-"><span class="toc-section-number">2.6</span> Конспект курса</a></li>
+<li><a href="2-5-.html#-"><span class="toc-section-number">2.7</span> Программа курса</a></li>
+</ul></li>
+<li><a href="3-b-.html#b----"><span class="toc-section-number">3</span> b - Об авторе</a></li>
+<li><a href="4-c-.html#c---"><span class="toc-section-number">4</span> c - Благодарности</a></li>
+<li class="has-sub"><a href="5-1-r-.html#-1---r."><span class="toc-section-number">5</span> Модуль 1: Введение в R.</a><ul>
+<li><a href="5-1-r.html#---r"><span class="toc-section-number">5.1</span> История создания языка R</a></li>
+<li><a href="5-2-r-.html#--r."><span class="toc-section-number">5.2</span> Преимущества языка R.</a></li>
+<li class="has-sub"><a href="5-3-r-rstudio.html#--r----rstudio"><span class="toc-section-number">5.3</span> Установка языка R и среды разработки RStudio</a><ul>
+<li><a href="5-3-r-rstudio.html#---r--rstudio"><span class="toc-section-number">5.3.1</span> Ссылки для загрузки R и RStudio</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-4-power-bi-r-.html#------power-bi---r-."><span class="toc-section-number">5.4</span> Загрузка, преобразование и визуализация данных в Power BI с помощью R скриптов.</a><ul>
+<li><a href="5-4-power-bi-r-.html#---power-bi."><span class="toc-section-number">5.4.1</span> Загрузка данных в Power BI.</a></li>
+<li><a href="5-4-power-bi-r-.html#---power-bi-power-query."><span class="toc-section-number">5.4.2</span> Преобразование данных в Power BI (power query).</a></li>
+<li><a href="5-4-power-bi-r-.html#---power-bi------r."><span class="toc-section-number">5.4.3</span> Визуализация данных в Power BI с помощью визуального элемента скрипта R.</a></li>
+<li><a href="5-4-power-bi-r-.html#---power-bi--r-."><span class="toc-section-number">5.4.4</span> Использование пользовательских параметров Power BI в R скриптах.</a></li>
+</ul></li>
+<li><a href="5-5-rstudio.html#--rstudio"><span class="toc-section-number">5.5</span> Среда разработки RStudio</a></li>
+<li class="has-sub"><a href="5-6-r.html#----r"><span class="toc-section-number">5.6</span> Классы объектов в языке R</a><ul>
+<li><a href="5-6-r.html#section-5.6.1"><span class="toc-section-number">5.6.1</span> Векторы</a></li>
+<li><a href="5-6-r.html#-data.frame"><span class="toc-section-number">5.6.2</span> Таблицы (data.frame)</a></li>
+<li><a href="5-6-r.html#-list"><span class="toc-section-number">5.6.3</span> Списки (list)</a></li>
+<li><a href="5-6-r.html#--"><span class="toc-section-number">5.6.4</span> Проверить класс объекта</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-7-r.html#-----r"><span class="toc-section-number">5.7</span> Работа со строками на языке R</a><ul>
+<li><a href="5-7-r.html#-------r"><span class="toc-section-number">5.7.1</span> Базовые возможности для работы со строками в R</a></li>
+<li><a href="5-7-r.html#------stringr"><span class="toc-section-number">5.7.2</span> Работа со строками с помощью пакета stringr</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-8-csv-excel-json-r.html#---csv-excel--json---r"><span class="toc-section-number">5.8</span> Загрузка данных из csv, excel и json файлов в R</a><ul>
+<li><a href="5-8-csv-excel-json-r.html#---csv-"><span class="toc-section-number">5.8.1</span> Загрузка данных из csv файлов</a></li>
+<li><a href="5-8-csv-excel-json-r.html#---excel-"><span class="toc-section-number">5.8.2</span> Загрузка данных из Excel файлов</a></li>
+<li><a href="5-8-csv-excel-json-r.html#---json-"><span class="toc-section-number">5.8.3</span> Загрузка данных из JSON файлов</a></li>
+</ul></li>
+<li><a href="5-9-r.html#------r"><span class="toc-section-number">5.9</span> Агрегирующие функции и арифметические операции в R</a></li>
+<li class="has-sub"><a href="5-10-.html#-----."><span class="toc-section-number">5.10</span> Манипуляция с данными, (группировка и агреция).</a><ul>
+<li><a href="5-10-.html#-dplyr"><span class="toc-section-number">5.10.1</span> Пакет dplyr</a></li>
+<li><a href="5-10-.html#-data.table"><span class="toc-section-number">5.10.2</span> Пакет data.table</a></li>
+<li><a href="5-10-.html#-sqldf"><span class="toc-section-number">5.10.3</span> Пакет sqldf</a></li>
+<li><a href="5-10-.html#-tidyr"><span class="toc-section-number">5.10.4</span> Пакет tidyr</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-11-r-lubridate-.html#------r--lubridate."><span class="toc-section-number">5.11</span> Работа с датами и временем в R, пакет lubridate.</a><ul>
+<li><a href="5-11-r-lubridate-.html#---------r"><span class="toc-section-number">5.11.1</span> Базовые возможности по работе с датой и временем в R</a></li>
+<li><a href="5-11-r-lubridate-.html#-lubridate"><span class="toc-section-number">5.11.2</span> Пакет lubridate</a></li>
+</ul></li>
+<li><a href="5-12-if-ifelse-switch-r.html#--if-ifelse-switch--r"><span class="toc-section-number">5.12</span> Условные конструкции if, ifelse, switch в R</a></li>
+<li class="has-sub"><a href="5-13-for-while.html#-for--while"><span class="toc-section-number">5.13</span> Циклы for и while</a><ul>
+<li><a href="5-13-for-while.html#-for"><span class="toc-section-number">5.13.1</span> Цикл for</a></li>
+<li><a href="5-13-for-while.html#-while"><span class="toc-section-number">5.13.2</span> Цикл while</a></li>
+</ul></li>
+<li><a href="5-7-r.html#-----r"><span class="toc-section-number">5.14</span> Разработка собственных функций в языке R</a></li>
+<li><a href="5-15-r-try.html#---r--try"><span class="toc-section-number">5.15</span> Обработка ошибок в R, функция try</a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">5.16</span> Рекомендации по оформлению кода</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-2-api-.html#-2---api--."><span class="toc-section-number">6</span> Модуль 2: Работа с API рекламных площадок.</a><ul>
+<li class="has-sub"><a href="6-1-api.html#--api"><span class="toc-section-number">6.1</span> Что такое API</a><ul>
+<li><a href="6-1-api.html#-http-"><span class="toc-section-number">6.1.1</span> Типы HTTP запросов</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-2-api-google-ads.html#--api-google-ads"><span class="toc-section-number">6.2</span> Работа с API Google Ads</a><ul>
+<li><a href="6-2-api-google-ads.html#----api-google-ads"><span class="toc-section-number">6.2.1</span> Как получить доступ к API Google Ads</a></li>
+<li><a href="6-2-api-google-ads.html#--api-google-ads"><span class="toc-section-number">6.2.2</span> Как устроен API Google Ads</a></li>
+<li><a href="6-2-api-google-ads.html#-radwords"><span class="toc-section-number">6.2.3</span> Пакет RAdwords</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-3-api-.html#--api--"><span class="toc-section-number">6.3</span> Работа с API Яндекс Директ</a><ul>
+<li><a href="6-3-api-.html#-ryandexdirect"><span class="toc-section-number">6.3.1</span> Пакет ryandexdirect</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-4-api-facebook.html#--api-facebook"><span class="toc-section-number">6.4</span> Работа с API Facebook</a><ul>
+<li><a href="6-4-api-facebook.html#---facebook"><span class="toc-section-number">6.4.1</span> Создание приложения в Facebook</a></li>
+<li><a href="6-4-api-facebook.html#--api-facebook"><span class="toc-section-number">6.4.2</span> Авторизация в API Facebook</a></li>
+<li><a href="6-4-api-facebook.html#-----facebook"><span class="toc-section-number">6.4.3</span> Загрузка объектов из рекламного кабинета Facebook</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-5-api-vk-com.html#--api--vk.com"><span class="toc-section-number">6.5</span> Работа с API Вконтакте (vk.com)</a><ul>
+<li><a href="6-5-api-vk-com.html#-----api-"><span class="toc-section-number">6.5.1</span> Создание приложения для работы с API Вконтакте</a></li>
+<li><a href="6-5-api-vk-com.html#--api-"><span class="toc-section-number">6.5.2</span> Авторизация в API Вконтакте</a></li>
+<li><a href="6-5-api-vk-com.html#--rvkstat"><span class="toc-section-number">6.5.3</span> Функции пакета rvkstat</a></li>
+<li><a href="2-2-.html#-----"><span class="toc-section-number">6.5.4</span> Загрузка объектов из рекламного кабинета Вконтакте</a></li>
+<li><a href="2-2-.html#-----"><span class="toc-section-number">6.5.5</span> Загрузка статистики из рекламного кабинета Вконтакте</a></li>
+<li><a href="2-4-.html#------"><span class="toc-section-number">6.5.6</span> Загрузка статистики по сообществам и группам Вконтакте</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-6-api-mytarget.html#--api-mytarget"><span class="toc-section-number">6.6</span> Работа с API MyTarget</a><ul>
+<li><a href="6-6-api-mytarget.html#--api-mytarget"><span class="toc-section-number">6.6.1</span> Авторизация в API MyTarget</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-7-google-analytics.html#---google-analytics"><span class="toc-section-number">6.7</span> Загрузка данных из Google Analytics</a><ul>
+<li><a href="6-7-google-analytics.html#-api----google-analytics"><span class="toc-section-number">6.7.1</span> Какие API интерфейсы доступны в Google Analytics</a></li>
+<li><a href="6-7-google-analytics.html#--api-google-analytics"><span class="toc-section-number">6.7.2</span> Авторизация в API Google Analytics</a></li>
+<li><a href="6-7-google-analytics.html#--management-api"><span class="toc-section-number">6.7.3</span> Работа с Management API</a></li>
+<li><a href="6-7-google-analytics.html#--core-reporting-api"><span class="toc-section-number">6.7.4</span> Работа с Core Reporting API</a></li>
+<li><a href="6-7-google-analytics.html#--multi-channel-funnels-api"><span class="toc-section-number">6.7.5</span> Работа с Multi-Channel Funnels API</a></li>
+<li><a href="6-7-google-analytics.html#--real-time-reporting-api"><span class="toc-section-number">6.7.6</span> Работа с Real time reporting API</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-3-api-.html#---api--"><span class="toc-section-number">6.8</span> Загрузка данных из API Яндекс Метрики</a><ul>
+<li><a href="6-3-api-.html#----api--"><span class="toc-section-number">6.8.1</span> Авторизация для работы с API Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#----api---"><span class="toc-section-number">6.8.2</span> Функции для работы с API управления Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#---api---"><span class="toc-section-number">6.8.3</span> Загрузка данных из API отчётов Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#---logs-api--"><span class="toc-section-number">6.8.4</span> Загрузка данных из Logs API Яндекс Метрики</a></li>
+<li><a href="6-8-api-.html#---api-----core-reporting-api-google-analytics"><span class="toc-section-number">6.8.5</span> Загрузка данных из API Яндекс Метрики совместимого с Core Reporting API Google Analytics</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-9-google-search-console.html#--google-search-console"><span class="toc-section-number">6.9</span> Работа с Google Search Console</a><ul>
+<li><a href="6-9-google-search-console.html#----5000---1-"><span class="toc-section-number">6.9.1</span> Как обойти ограничение в 5000 строк на 1 запрос</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-10-google-trends.html#--google-trends"><span class="toc-section-number">6.10</span> Работа с Google Trends</a><ul>
+<li><a href="6-10-google-trends.html#-----google-trends"><span class="toc-section-number">6.10.1</span> Манипуляция с данными полученными из Google Trends</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-6-r.html#--"><span class="toc-section-number">6.11</span> Парсинг веб сайтов</a><ul>
+<li><a href="5-6-r.html#----"><span class="toc-section-number">6.11.1</span> Поиск элементов на веб странице</a></li>
+<li><a href="6-11-.html#-----html-"><span class="toc-section-number">6.11.2</span> Извлечение значений из полученныз элементов HTML страницы</a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">6.11.3</span> Имитация пользовательской веб сессии</a></li>
+</ul></li>
+<li><a href="6-1-api.html#-http-"><span class="toc-section-number">6.12</span> отправка HTTP запросов</a></li>
+</ul></li>
+<li class="has-sub"><a href="7-3-api-.html#-3-----api----."><span class="toc-section-number">7</span> Модуль 3: Работа с загруженными из API интерфейсов различных сервисов данными.</a><ul>
+<li><a href="7-1-google-.html#-----google-"><span class="toc-section-number">7.1</span> Отправка и стение данных из Google Таблиц</a></li>
+<li class="has-sub"><a href="7-2-ggplot2.html#-----ggplot2"><span class="toc-section-number">7.2</span> Визуализация данных с помощью пакета ggplot2</a><ul>
+<li><a href="7-2-ggplot2.html#---qplot"><span class="toc-section-number">7.2.1</span> Быстрый график, функция <code>qplot</code></a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">7.2.2</span> Построение графиков наложением слоёв</a></li>
+</ul></li>
+<li class="has-sub"><a href="7-3-dbi-.html#----dbi-------"><span class="toc-section-number">7.3</span> Работа с базами данных, DBI - Интерфейс взаимодействия с базами данных</a><ul>
+<li><a href="7-3-dbi-.html#---mysql"><span class="toc-section-number">7.3.1</span> Работа с СУБД MySQL</a></li>
+<li><a href="7-3-dbi-.html#----postgresql"><span class="toc-section-number">7.3.2</span> Работа с базой данных PostgreSQL</a></li>
+<li><a href="7-3-dbi-.html#----sqlite"><span class="toc-section-number">7.3.3</span> Работа с базой данных SQLite</a></li>
+<li><a href="7-3-dbi-.html#-----google-bigquery"><span class="toc-section-number">7.3.4</span> Работа с облачной базой данных Google BigQuery</a></li>
+</ul></li>
+<li><a href="5-6-r.html#----r"><span class="toc-section-number">7.4</span> Отправка почты с помощью R</a></li>
+<li class="has-sub"><a href="7-5-r-.html#---r---"><span class="toc-section-number">7.5</span> Как настроить запуск R скриптов по рассписанию</a><ul>
+<li><a href="2-1-.html#---"><span class="toc-section-number">7.5.1</span> Настройка расписание через плагин</a></li>
+<li><a href="7-5-r-.html#------taskscheduler"><span class="toc-section-number">7.5.2</span> Настройка расписание с помощью функций пакета taskscheduleR</a></li>
+<li><a href="7-5-r-.html#------windows"><span class="toc-section-number">7.5.3</span> Ручная настройка рассписания через планировщик задач Windows</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="8-r-r-sources.html#-----r-r-sources"><span class="toc-section-number">8</span> Полезные, русскоязычные ресурсы по языку R (r sources)</a><ul>
+<li><a href="2-1-.html#---"><span class="toc-section-number">8.1</span> Группы в социальных сетях</a></li>
+<li><a href="2-1-.html#---"><span class="toc-section-number">8.2</span> Телеграмм каналы и чаты</a></li>
+<li><a href="8-3-section-8-3.html#section-8.3"><span class="toc-section-number">8.3</span> Блоги</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="-----." class="section level2">
+<h2><span class="header-section-number">5.10</span> Манипуляция с данными, (группировка и агреция).</h2>
+<div id="-dplyr" class="section level3">
+<h3><span class="header-section-number">5.10.1</span> Пакет dplyr</h3>
+<p>Пакет dplyr является наиболее популярным пакетом для работы с данными в R, все функции пакета представляют из себя глаголы, синтаксис пакета очень напонимает синтаксис SQL запросов.</p>
+<p><strong>Основные команды</strong> для работы с данными в пакете dplyr</p>
+<ul>
+<li><code>select</code> - выбор полей из data.frame</li>
+<li><code>filter</code> - фильтрация данных</li>
+<li><code>arrange</code> - сортировка данных</li>
+<li><code>group_by</code> - группировка данных</li>
+<li><code>summarise</code> - агрегация данных</li>
+</ul>
+<p><strong>Соединение таблиц</strong> осуществляется с помощью функций семейства join:</p>
+<ul>
+<li><code>inner_join</code> - возвращает строки общие для обеих таблиц соединения</li>
+<li><code>left_join</code> - левое соединение, возвращает все строки из левой таблицы, и соответвующие по ключи строки из правой таблицы</li>
+<li><code>right_join</code> - правое соединение, возвращает все строки из правой таблицы, и соответвующие по ключи строки из левой таблицы</li>
+<li><code>full_join</code>- декартово произведение, возвращает все вараинты соединения каждой строки из левой таблицы с каждой сторокой из право таблицы</li>
+</ul>
+<div class="figure">
+<img src="r_for_marketing_2018_files\figure-html\join.png" alt="Операция JOIN" />
+<p class="caption">Операция JOIN</p>
+</div>
+<p><strong>Фильтрующие соединения:</strong></p>
+<ul>
+<li><code>semi_join</code> - возвращает все строки из левой таблицы, для которых по ключу найдены соответвия в правой таблице</li>
+<li><code>anti_join</code> - возвращает все строки из левой таблицы, для которых по ключу небыли найдены соответвия в правой таблице</li>
+</ul>
+<p><strong>Конвеерный синтаксис</strong> В пакет <em>dplyr</em> из пакета <em>magrittr</em> был взаимствован конвеерный оператор <code>%&gt;%</code>, с помощью него можно избегать создание промежуточных объектов, данный оператор передаёт в качестве первого аргумента функции результат выпонения функции на прошлом шаге, если вам необходимо передать результат выполнения прошлого шага не в первый, а какой либо другой аргумент функции на следующем шаге то вы можете воспользоваться точкой, которая и будет хранить результат выполнения прошлого шага.</p>
+<p>Пример конвеерной записи преобразования данных</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+<span class="kw">setwd</span>(<span class="st">&quot;C:/r_for_marketing_course/Материалы курса/Модуль 1/Урок 7/&quot;</span>)
+sales   &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;sales.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="dt">header =</span> T)
+<span class="co"># конверный стиль записи</span>
+sales <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(manager) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># группируем таблицу по полю manager</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">count            =</span> <span class="kw">n</span>(),                            <span class="co"># считаем количество строк по каждому менеджеру</span>
+            <span class="dt">total_quantity   =</span> <span class="kw">sum</span>(quantity),                  <span class="co"># считаем количество проданных едениц товара</span>
+            <span class="dt">average_quantity =</span> <span class="kw">mean</span>(quantity),                 <span class="co"># считаем среднее количество едениц товара в транзации</span>
+            <span class="dt">products         =</span> <span class="kw">length</span>(<span class="kw">unique</span>(product_id))) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># считаем какое к-во наименований товара продал менеджер</span>
+<span class="st">  </span><span class="kw">arrange</span>(<span class="op">-</span>total_quantity) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># сортирум таблицу по полю total_quantity по убыванию</span>
+<span class="st">  </span><span class="kw">head</span>(<span class="dv">3</span>) <span class="co"># оставляем 3 верхние строки</span></code></pre></div>
+<p>Приведённый выше код делает следующе, передаёт в первый аргумент функции <code>group_by</code>, с помощью конвеерного оператора <code>%&gt;%</code> объкт <em>sales</em> и тем самым группирует дата фрейс sales по полю <em>manager</em>. Результат группировки, опять же с помощью конвеерного оператора <code>%&gt;%</code> передаётся в качестве первого аргумента функции <code>summarise</code>, далее к сгруппированным данным применяется ряд агрегаций, функции <code>n()</code> считает количество строк попавших в каждую группу, функция <code>sum</code> суммирует данные в каждой группе по полю <em>quantity</em>, функция <code>mean</code> считает среднее значение по полю <em>quantity</em>, а конструкция <code>length(unique(product_id))</code> считает количество уникальных <em>product_id</em> в каждой группе. После агрегации мы через конвеерный оператор <code>%&gt;%</code> передаём полученный на прошлом шаге результат в качестве первого аргумента функции <code>arrange</code>, и производим сортиртировку по убыванию поля <em>total_quantity</em>, передаём отсортированный результат далее в функцию <code>head</code> через <code>%&gt;%</code> и оставляем первые три строки.</p>
+<p>В итоге мы получим следующий результат:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">manager</th>
+<th align="right">count</th>
+<th align="right">total_quantity</th>
+<th align="right">average_quantity</th>
+<th align="right">products</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Olga</td>
+<td align="right">25</td>
+<td align="right">124</td>
+<td align="right">4.960000</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="left">Andrey</td>
+<td align="right">31</td>
+<td align="right">114</td>
+<td align="right">3.677419</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="left">Alexey</td>
+<td align="right">31</td>
+<td align="right">111</td>
+<td align="right">3.580645</td>
+<td align="right">12</td>
+</tr>
+</tbody>
+</table>
+<p>Пример работы с фильрующими соединениями</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># фильтрующие соединения</span>
+<span class="kw">anti_join</span>(product, sales, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span> =<span class="st"> &quot;product_id&quot;</span>)) <span class="co"># товары по которым не было транзакций</span>
+<span class="kw">semi_join</span>(product, sales, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span> =<span class="st"> &quot;product_id&quot;</span>)) <span class="co"># товары по которым были транзакции</span></code></pre></div>
+</div>
+<div id="-data.table" class="section level3">
+<h3><span class="header-section-number">5.10.2</span> Пакет data.table</h3>
+<p>Пакет <strong>data.table</strong> предназначен для работы с большими массивами данных, по своему синтаксису он похож на работу с обычными data.frame, но в квадратных скобках мы указываем не только строки и столбцы которые необходимо выбрать, но и можем задавать группировку и агрегацию данных.</p>
+<p><strong>Загрузка данных с помощью data.table</strong> Для загрузки данных из csv файлов в <strong>data.table</strong> есть функция <code>fread</code>, она принимает теже аргументы, что и стандартная функция <code>read.table</code> но работает в разы быстрее, и создаёт объекты класса <em>data.table</em>.</p>
+<p><strong>Синтаксис пакета data.table</strong></p>
+<div class="figure">
+<img src="r_for_marketing_2018_files\figure-html\data.table.png" alt="Синтаксис data.table" />
+<p class="caption">Синтаксис data.table</p>
+</div>
+<p>Обращение к полям таблиц, агрегация и группировка данных в <em>data.table</em> осуществляется внутри квадратных скобок, сначала мы указываем какие строки хотим выбрать, потом указываем агрегирующие операции и поля которые хотим в результате получить, и в третем блоке с помощью аргумента <code>by</code> или <code>bykey</code> мы указываем поля по которым хотим сгруппировать результат.</p>
+<p>Вместо конвеерных операций расмотренных в пакете <strong>dplyr</strong>, в <strong>data.table</strong> существуют цепочки, записываются они следующим образом: <code>data_table_name[1ое звено][2ое звено][3ее звено][4ое звено][...]</code></p>
+<p>Таким образом каждое следующее звено работает с результатом полученным из прошлого звена.</p>
+<p><strong>Пример работы с пакетом data.table</strong></p>
+<p>С помощью синтаксиса <strong>data.table</strong> мы можем получить тот же резуьтат, что и при работе с <strong>dplyr</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;data.table&quot;</span>)
+<span class="kw">setwd</span>(<span class="st">&quot;C:/r_for_marketing_course/Материалы курса/Модуль 1/Урок 7/&quot;</span>)
+<span class="co"># загрузка данных</span>
+sales_dt &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&quot;sales.csv&quot;</span>)
+sales_dt[,
+         .(<span class="dt">count            =</span> .N,                             <span class="co"># считаем количество строк по каждому менеджеру</span>
+           <span class="dt">total_quantity   =</span> <span class="kw">sum</span>(quantity),                  <span class="co"># считаем количество проданных едениц товара</span>
+           <span class="dt">average_quantity =</span> <span class="kw">mean</span>(quantity),                 <span class="co"># считаем среднее количество едениц товара в транзации</span>
+           <span class="dt">products         =</span> <span class="kw">length</span>(<span class="kw">unique</span>(product_id))),    <span class="co"># считаем какое к-во наименований товара продал менеджер</span>
+         by =<span class="st"> </span>manager][<span class="kw">order</span>(total_quantity, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)][<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,]</code></pre></div>
+<p>Приведённый выше код вернёт результат аналогичный тому, который был получен ранее при работе с пакетом dplyr.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">manager</th>
+<th align="right">count</th>
+<th align="right">total_quantity</th>
+<th align="right">average_quantity</th>
+<th align="right">products</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Olga</td>
+<td align="right">25</td>
+<td align="right">124</td>
+<td align="right">4.960000</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="left">Andrey</td>
+<td align="right">31</td>
+<td align="right">114</td>
+<td align="right">3.677419</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="left">Alexey</td>
+<td align="right">31</td>
+<td align="right">111</td>
+<td align="right">3.580645</td>
+<td align="right">12</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="-sqldf" class="section level3">
+<h3><span class="header-section-number">5.10.3</span> Пакет sqldf</h3>
+<p><strong>sqldf</strong> является менее популярным пакетом по сравнению с <strong>dplyr</strong> и <strong>data.table</strong>, основным его назначением является возможность манипулировать с данными с помощью SQL синтаксиса.</p>
+<p>Пакет поддерживает 4 SQL диалекта: SQLite (по умолчанию), MySQL, PostgreSQL, H2.</p>
+<p>Для того, что бы установить нужный диалект необходимо поменять опцию <em>sqldf.driver</em>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="dt">sqldf.driver =</span> <span class="st">&quot;SQLite&quot;</span>)</code></pre></div>
+<p>Для того, что бы получить с помощью пакета <strong>sqldf</strong> результат аналогичный тому, что мы ранее получили с помощью пакетов <strong>dplyr</strong> и <strong>data.table</strong> необходимо выполнить следующий код.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(sqldf)
+<span class="co"># повторяем агрегацию применяемую в примере с dplyr и data.table</span>
+sqldf_exampl &lt;-<span class="st"> </span><span class="kw">sqldf</span>(<span class="st">&quot;SELECT</span>
+<span class="st">                         manager,</span>
+<span class="st">                         COUNT(*) as count,</span>
+<span class="st">                         SUM(quantity) as total_quantity,</span>
+<span class="st">                         AVG(quantity) as average_quantity,</span>
+<span class="st">                         COUNT(DISTINCT product_id) as products</span>
+<span class="st">                       FROM sales</span>
+<span class="st">                       GROUP by manager</span>
+<span class="st">                       ORDER BY total_quantity DESC</span>
+<span class="st">                       LIMIT 3&quot;</span>)</code></pre></div>
+<p>В результате его выполнения, мы получим уже знакомый результат агрегации данных.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">manager</th>
+<th align="right">count</th>
+<th align="right">total_quantity</th>
+<th align="right">average_quantity</th>
+<th align="right">products</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Olga</td>
+<td align="right">25</td>
+<td align="right">124</td>
+<td align="right">4.960000</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="left">Andrey</td>
+<td align="right">31</td>
+<td align="right">114</td>
+<td align="right">3.677419</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="left">Alexey</td>
+<td align="right">31</td>
+<td align="right">111</td>
+<td align="right">3.580645</td>
+<td align="right">12</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="-tidyr" class="section level3">
+<h3><span class="header-section-number">5.10.4</span> Пакет tidyr</h3>
+<p>Данный пакет предназначен для придания данным так называемого аккуратного вида, так такую концепцию данных называют <em>Tidy data</em>, заключается она в том, что наиболее удобно работать с данными приведёнными к такому виду, когда каждая строка таблицы соответствует одному наблюдения, а каждый столбец хранит информацию об одном свойстве наблдений.</p>
+<p><strong>Задача: </strong> в материалах курса есть файл <em>tidyr_example.xlsx</em>, найти его можно в папке материале курса / модуль 1 / урок 7. Сам файл представляет из себя таблицу следующего вида:</p>
+<div class="figure">
+<img src="http://img.netpeak.ua/alsey/153304211756_kiss_10kb.png" alt="файл tidyr_example.xlsx" />
+<p class="caption">файл tidyr_example.xlsx</p>
+</div>
+<p>Довольно часто коллеги предоставляют вам данные именно в таком виде,но работать с такими данными неудобно, т.к. существуют следующие ошибки.</p>
+<ol style="list-style-type: decimal">
+<li>Поле <em>country</em> было сгруппировано в Excel, и при загрузке данных в R большая часть ячеек в этом поле не будут заполнены.</li>
+<li>Поле <em>client_code</em> содержит код клиента, который в свою очередь хранит информацию сразу о трёх его свойствах, о сегмента клиента, его номер, и класс клиента, в данном случае все три свойства хранятся в одном поле, что не соответвует концепции Tidy data.</li>
+<li>4 столбца хранят информацию о количестве продаж в кокретном месяце, но месяц является отдельным свойством наблюдения, и название месяцаа должно храниться в отдельном столбце, и количество продаж в конкретном месяце так же необходимо хранить как отдельное свойство продажи.</li>
+</ol>
+<p>Пакет <strong>tidyr</strong> предоставляет набор функций с помощью которых можно исправить все перечисленные выше проблемы и привести данные к аккуратному виду.</p>
+<p><strong>Функции в tidyr</strong></p>
+<ul>
+<li><code>fill</code> - заполнение пропущенных значений в поле, в нашем случае заполнение поля <em>country</em></li>
+<li><code>separate</code> - разделяет одно поле на несколько, в нашей задаче нам необходимо разбить поле <em>client_code</em> на 3 поля <em>client_segment</em>, <em>client_id</em> и <em>client_class.</em></li>
+<li><code>unite</code> - совершает операцию объеденения нескольких полей в одно, дейтсвие обратное функции <code>separate</code>.</li>
+<li><code>gather</code> - функция преобразующая данные из широкого формата в длинный,в нашем случае мы будем с помощью неё преобразовывать поля <em>June</em>, <em>July</em>, <em>Aug</em>, <em>Sept</em> в два поля <em>month</em>, в котром будет хранится название месяца и <em>sales_count</em>, в котором будет хранится информация о количестве продаж.</li>
+<li><code>spread</code> - функция преобразующая данные из длинного формата в широкий, операция обратнаяя той, которую осуществляет функция <code>gather</code>.</li>
+</ul>
+<p>Для решения приведённой задачи с помощью конвеерного стиля необходимо выполнить следующий код:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyr)
+<span class="kw">library</span>(readxl)
+
+<span class="kw">setwd</span>(<span class="st">&quot;C:/r_for_marketing_course/Материалы курса/Модуль 1/Урок 7/&quot;</span>)
+
+bad_format_data &lt;-<span class="st"> </span><span class="kw">read_excel</span>( <span class="st">&quot;tidyr_example.xlsx&quot;</span> , <span class="dt">sheet =</span> <span class="st">&quot;tidyr_example&quot;</span>, <span class="dt">col_names =</span> T)
+
+good_data &lt;-<span class="st"> </span>bad_format_data <span class="op">%&gt;%</span>
+<span class="st">                  </span><span class="kw">fill</span>(country) <span class="op">%&gt;%</span>
+<span class="st">                  </span><span class="kw">separate</span>(<span class="dt">col  =</span> client_code,
+                           <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;client_segment&quot;</span>, <span class="st">&quot;client_id&quot;</span>, <span class="st">&quot;client_class&quot;</span>),
+                           <span class="dt">sep  =</span> <span class="st">&quot;_&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">                  </span><span class="kw">gather</span>(<span class="dt">key =</span> <span class="st">&quot;month&quot;</span>,
+                         <span class="dt">value =</span> <span class="st">&quot;sales_count&quot;</span>,
+                         June<span class="op">:</span>Sept)</code></pre></div>
+<p>В рузультате чего мы приведём наши данные к аккуратному виду, (верхние 20 строк результирующей табицы):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">country</th>
+<th align="left">client_segment</th>
+<th align="left">client_id</th>
+<th align="left">client_class</th>
+<th align="left">month</th>
+<th align="right">sales_count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">UA</td>
+<td align="left">c2с</td>
+<td align="left">1</td>
+<td align="left">a</td>
+<td align="left">June</td>
+<td align="right">74</td>
+</tr>
+<tr class="even">
+<td align="left">UA</td>
+<td align="left">b2b</td>
+<td align="left">2</td>
+<td align="left">a</td>
+<td align="left">June</td>
+<td align="right">45</td>
+</tr>
+<tr class="odd">
+<td align="left">UA</td>
+<td align="left">c2с</td>
+<td align="left">3</td>
+<td align="left">c</td>
+<td align="left">June</td>
+<td align="right">37</td>
+</tr>
+<tr class="even">
+<td align="left">UA</td>
+<td align="left">c2с</td>
+<td align="left">4</td>
+<td align="left">b</td>
+<td align="left">June</td>
+<td align="right">87</td>
+</tr>
+<tr class="odd">
+<td align="left">UA</td>
+<td align="left">c2с</td>
+<td align="left">5</td>
+<td align="left">a</td>
+<td align="left">June</td>
+<td align="right">55</td>
+</tr>
+<tr class="even">
+<td align="left">RU</td>
+<td align="left">b2b</td>
+<td align="left">2</td>
+<td align="left">b</td>
+<td align="left">June</td>
+<td align="right">66</td>
+</tr>
+<tr class="odd">
+<td align="left">RU</td>
+<td align="left">c2с</td>
+<td align="left">4</td>
+<td align="left">a</td>
+<td align="left">June</td>
+<td align="right">70</td>
+</tr>
+<tr class="even">
+<td align="left">RU</td>
+<td align="left">b2b</td>
+<td align="left">5</td>
+<td align="left">a</td>
+<td align="left">June</td>
+<td align="right">62</td>
+</tr>
+<tr class="odd">
+<td align="left">KZ</td>
+<td align="left">b2b</td>
+<td align="left">8</td>
+<td align="left">c</td>
+<td align="left">June</td>
+<td align="right">57</td>
+</tr>
+<tr class="even">
+<td align="left">KZ</td>
+<td align="left">c2с</td>
+<td align="left">6</td>
+<td align="left">b</td>
+<td align="left">June</td>
+<td align="right">51</td>
+</tr>
+<tr class="odd">
+<td align="left">KZ</td>
+<td align="left">c2с</td>
+<td align="left">9</td>
+<td align="left">a</td>
+<td align="left">June</td>
+<td align="right">43</td>
+</tr>
+<tr class="even">
+<td align="left">KZ</td>
+<td align="left">b2b</td>
+<td align="left">10</td>
+<td align="left">b</td>
+<td align="left">June</td>
+<td align="right">62</td>
+</tr>
+<tr class="odd">
+<td align="left">KZ</td>
+<td align="left">b2b</td>
+<td align="left">2</td>
+<td align="left">b</td>
+<td align="left">June</td>
+<td align="right">44</td>
+</tr>
+<tr class="even">
+<td align="left">KZ</td>
+<td align="left">c2с</td>
+<td align="left">3</td>
+<td align="left">c</td>
+<td align="left">June</td>
+<td align="right">60</td>
+</tr>
+<tr class="odd">
+<td align="left">KZ</td>
+<td align="left">c2с</td>
+<td align="left">11</td>
+<td align="left">b</td>
+<td align="left">June</td>
+<td align="right">48</td>
+</tr>
+<tr class="even">
+<td align="left">KZ</td>
+<td align="left">b2b</td>
+<td align="left">12</td>
+<td align="left">c</td>
+<td align="left">June</td>
+<td align="right">62</td>
+</tr>
+<tr class="odd">
+<td align="left">UA</td>
+<td align="left">c2с</td>
+<td align="left">1</td>
+<td align="left">a</td>
+<td align="left">July</td>
+<td align="right">87</td>
+</tr>
+<tr class="even">
+<td align="left">UA</td>
+<td align="left">b2b</td>
+<td align="left">2</td>
+<td align="left">a</td>
+<td align="left">July</td>
+<td align="right">58</td>
+</tr>
+<tr class="odd">
+<td align="left">UA</td>
+<td align="left">c2с</td>
+<td align="left">3</td>
+<td align="left">c</td>
+<td align="left">July</td>
+<td align="right">31</td>
+</tr>
+<tr class="even">
+<td align="left">UA</td>
+<td align="left">c2с</td>
+<td align="left">4</td>
+<td align="left">b</td>
+<td align="left">July</td>
+<td align="right">65</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="5-9-r.html"><button class="btn btn-default">Previous</button></a>
+<a href="5-11-r-lubridate-.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>
