@@ -1,11 +1,11 @@
-# запрос данных
+# Г§Г ГЇГ°Г®Г± Г¤Г Г­Г­Г»Гµ
 library(rfacebookstat)
-# установка опций
+# ГіГ±ГІГ Г­Г®ГўГЄГ  Г®ГЇГ¶ГЁГ©
 options(rfacebookstat.accounts_id  = "act_000000000",
         rfacebookstat.api_version  = "v4.0",
-        rfacebookstat.access_token = "EAACg7dbgLXMBAOyRube7lWcfeZALDxK5Fl3vnRs3veDyhZB8ZC22NZBCLRw...")
+        rfacebookstat.access_token = "РІР°С€ С‚РѕРєРµРЅkjdgdhbfidybdg...")
 
-# реакций на ваши объявления
+# Г°ГҐГ ГЄГ¶ГЁГ© Г­Г  ГўГ ГёГЁ Г®ГЎГєГїГўГ«ГҐГ­ГЁГї
 fb_reaction <- fbGetMarketingStat(level = "ad",
                                   fields = "ad_id,clicks,actions",
                                   action_breakdowns  = "action_reaction",
@@ -13,7 +13,7 @@ fb_reaction <- fbGetMarketingStat(level = "ad",
                                   date_stop = Sys.Date() - 1,
                                   interval = "day")
 
-# Устройство, на котором произошло отслеживаемое событие конверсии
+# Г“Г±ГІГ°Г®Г©Г±ГІГўГ®, Г­Г  ГЄГ®ГІГ®Г°Г®Г¬ ГЇГ°Г®ГЁГ§Г®ГёГ«Г® Г®ГІГ±Г«ГҐГ¦ГЁГўГ ГҐГ¬Г®ГҐ Г±Г®ГЎГ»ГІГЁГҐ ГЄГ®Г­ГўГҐГ°Г±ГЁГЁ
 fb_action_device <- fbGetMarketingStat(level = "ad",
                                        fields = "ad_id,actions",
                                        action_breakdowns  = "action_device",
@@ -21,7 +21,7 @@ fb_action_device <- fbGetMarketingStat(level = "ad",
                                        date_stop = Sys.Date() - 1,
                                        interval = "day")
 
-# Тип действий, выполненных в отношении вашей рекламы
+# Г’ГЁГЇ Г¤ГҐГ©Г±ГІГўГЁГ©, ГўГ»ГЇГ®Г«Г­ГҐГ­Г­Г»Гµ Гў Г®ГІГ­Г®ГёГҐГ­ГЁГЁ ГўГ ГёГҐГ© Г°ГҐГЄГ«Г Г¬Г»
 fb_action_type <- fbGetMarketingStat(level = "ad",
                                     fields = "ad_id,
                                               clicks,
@@ -31,7 +31,7 @@ fb_action_type <- fbGetMarketingStat(level = "ad",
                                     date_stop = Sys.Date() - 1,
                                     interval = "day")
 
-# Куда переходят люди, нажав вашу рекламу
+# ГЉГіГ¤Г  ГЇГҐГ°ГҐГµГ®Г¤ГїГІ Г«ГѕГ¤ГЁ, Г­Г Г¦Г Гў ГўГ ГёГі Г°ГҐГЄГ«Г Г¬Гі
 fb_action_destination <- fbGetMarketingStat(level = "ad",
                                             fields = "ad_id,actions",
                                             action_breakdowns  = "action_destination",
@@ -39,5 +39,5 @@ fb_action_destination <- fbGetMarketingStat(level = "ad",
                                             date_stop = Sys.Date() - 1,
                                             interval = "day")
 
-# Виньетка
+# Г‚ГЁГ­ГјГҐГІГЄГ 
 vignette("rfacebookstat-get-statistics", package = "rfacebookstat")
