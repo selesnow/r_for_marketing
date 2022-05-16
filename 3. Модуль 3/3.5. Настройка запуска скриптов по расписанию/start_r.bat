@@ -1,0 +1,1 @@
+﻿R CMD BATCH "C:\r_for_marketing_course\Материалы курса\Модуль 3\Урок 5\my_script.R"

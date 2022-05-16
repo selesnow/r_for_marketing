@@ -1,0 +1,28 @@
+{
+  "users": [
+    {"Name": "Alexey",
+     "Age": 34,
+     "Children": ["Arthur"],
+     "Company": "Powmagic",
+     "Expiriens": {"R": 5, "Power BI": 3, "SQL": 4, "Excel": 9}},
+    {"Name": "Andrey",
+     "Age": 29,
+     "Company": "TraidMarking",
+     "Expiriens": {"Power BI": 2, "Excel": 5}},
+    {"Name": "Denis",
+     "Children": ["Daria", "Petr"],
+     "Company": "TraidMarking",
+     "Expiriens": {"Sales": 8, "Marketing": 5, "Excel": 2}},
+    {"Name": "Vladmir",
+    "Age": 42,
+     "Children": ["Anna"],
+     "Car": {"Mark": "Toyota",
+             "Model": "Corolla",
+             "Year": 2008},
+     "Company": "Storcranner",
+     "Expiriens": {"Drive": 10}},
+    {"Name": "Nikolay",
+     "Age": 24,
+     "Company": "Powmagic",
+     "Expiriens": {"R": 2, "SQL": 4, "Python": 4}}]
+}

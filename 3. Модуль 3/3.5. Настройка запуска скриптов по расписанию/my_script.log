@@ -1,0 +1,15 @@
+[1] "C:/Users/Alsey/Documents/R/win-library/3.5"
+[2] "C:/Program Files/R/R-3.5.1/library"        
+
+Присоединяю пакет: 'dplyr'
+
+Следующие объекты скрыты от 'package:stats':
+
+    filter, lag
+
+Следующие объекты скрыты от 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Saving 7 x 7 in image
+[1] "Java-Object{org.apache.commons.mail.ImageHtmlEmail@67b92f0a}"

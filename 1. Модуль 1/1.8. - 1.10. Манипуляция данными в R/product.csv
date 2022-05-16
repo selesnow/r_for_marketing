@@ -1,0 +1,15 @@
+id;product;category;price
+1;Notebook Acer;Computers;500
+2;Mouse optical;Computers;12
+3;Keyboard;Computers;18
+4;CPU Processor;Computers;180
+5;Small air conditioning;Air conditioning;200
+6;Power air conditioning;Air conditioning;370
+7;Smoothing iron;Appliances;25
+8;Boiler;Appliances;315
+9;Washer;Appliances;230
+10;TV Samsung;TV;810
+11;TV Toshiba;TV;680
+12;Mobile Samsung;Mobile;810
+13;Mobile Iphone;Mobile;1000
+14;Mobile Lenovo;Mobile;390
