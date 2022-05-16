@@ -1,5 +1,5 @@
 # Установка и подключение пакета rfacebookstat
-devtools::install_github("selesnow/ryandexdirect")
+devtools::install_github("selesnow/rfacebookstat")
 library(rfacebookstat)
 
 # переходим в рабочую директорию
