@@ -4,6 +4,7 @@
 
 1. [Курс с текстовой методичкой и видео лекциями](https://r-for-marketing.netpeak.net/) (требуется бесплатная регистрация)
 2. [Плейлист со всеми видео уроками](https://www.youtube.com/playlist?list=PLD2LDq8edf4o6dSZ4BIr7J08gT97nimH_)
+3. [Материалы к курсу](https://github.com/selesnow/r_for_marketing)
 
 ### Автор курса
 Алексей Селезнёв, Head of analytics dept. at [Netpeak](https://netpeak.net)
