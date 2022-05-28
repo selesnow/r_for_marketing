@@ -9,6 +9,7 @@
 ### Автор курса
 Алексей Селезнёв, Head of analytics dept. at [Netpeak](https://netpeak.net)
 <Br>Telegram канал автора: [R4marketing](https://t.me/R4marketing)
+<Br>YouTube канал автора: [R4marketing](https://www.youtube.com/R4marketing/?sub_confirmation=1)
 <Br>Сайт с документацией к пакетам: [selesnow.github.io](https://selesnow.github.io)
 <Br>email: selesnow@gmail.com
 <Br>skype: selesnow
